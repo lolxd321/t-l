@@ -1,0 +1,19 @@
+<div class="headerInput">
+  <h1>What are you looking for?</h1>
+  <button  [mat-dialog-close]> <mat-icon>close</mat-icon></button>
+</div>
+
+<div>
+  <mat-form-field>
+    <mat-label>Looking for:</mat-label>
+    <mat-select  [(ngModel)]="lookingFor" multiple>
+      <mat-option *ngFor="let lookingFor of lookingForList" [value]="lookingFor">{{lookingFor}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<div class="lastRow">
+  <button mat-button  [mat-dialog-close]><span>Exit</span></button>
+  <button (click)="updateContent()" mat-button color="primary"  color="primary" [mat-dialog-close]><span>Update</span></button>
+<div>

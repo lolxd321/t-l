@@ -1,0 +1,52 @@
+.footer {
+  margin-top: 20px;
+ width: 100%;
+ margin-bottom: 70px;
+}
+
+.footerLink a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.footerLink a:hover {
+  text-decoration: underline;
+}
+
+.copyRights {
+  color: black;
+  opacity: 0.5;
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 950px) {
+
+  .footerLink {
+    display: flex;
+    justify-content: center;
+  }
+  .footer {
+
+   margin-bottom: 10px;
+  }
+
+  .footerLink a {
+
+    margin-right: 7px;
+    text-decoration: none;
+    color: black;
+    opacity: 0.9;
+    margin-bottom: 15px;
+    font-size: 8px;
+  }
+
+  .copyRights {
+    color: black;
+    opacity: 0.5;
+    font-size: 8px;
+  }
+
+}

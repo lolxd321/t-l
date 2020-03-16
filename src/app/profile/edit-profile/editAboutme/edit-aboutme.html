@@ -1,0 +1,20 @@
+<div class="headerInput">
+  <h1>About me:</h1>
+  <button  [mat-dialog-close]> <mat-icon>close</mat-icon></button>
+</div>
+<div class="notAllowed">It is not allowed to provide your contact information in this field.</div>
+
+<div>
+
+
+
+<textarea [(ngModel)]="aboutMe"  required maxlength="500">{{aboutMe}}</textarea>
+
+
+</div>
+
+
+<div class="lastRow">
+  <button mat-button  [mat-dialog-close]><span>Exit</span></button>
+  <button (click)="updateContent()" mat-button color="primary"  color="primary" [mat-dialog-close]><span>Update</span></button>
+<div>

@@ -1,0 +1,136 @@
+<mat-toolbar class="header" *ngIf="!admin">
+    <button mat-icon-button  (click)="onToggleSidenav()"><mat-icon>menu</mat-icon></button>
+
+    <div routerLink="/browse/girls" class="title"><img src="https://firebasestorage.googleapis.com/v0/b/test-app-5b305.appspot.com/o/logotravel.png?alt=media&token=bd54cdfe-845d-468e-be73-3c11df9e9779"></div>
+
+    <div fxFlex></div>
+    <button fxHide.sm fxHide.xs *ngIf="!premiumLocal" class="premiuemButton" ><a routerLink="/premium"> Use Premium now </a></button>
+    <button fxHide.sm fxHide.xs *ngIf="premiumLocal" class="premiuemButton" ><a routerLink="/profile/membership"> Premium Account </a></button>
+    <a fxLayout class="rightIcons"   *ngIf="count != 0"matBadge="{{count}}" matBadgeColor="warn"><mat-icon id="dropdown1">notifications</mat-icon></a>
+    <a fxLayout class="rightIcons"  *ngIf="count == 0" matBadgeColor="warn"><mat-icon id="dropdown1">notifications</mat-icon></a>
+    <a fxLayout class="rightIcons" *ngIf="count != 0"matBadge="0" matBadgeColor="warn"><mat-icon id="dropdown2">chat_bubble</mat-icon></a>
+    <a fxLayout class="rightIcons" *ngIf="count == 0"  matBadgeColor="warn"><mat-icon id="dropdown2">chat_bubble</mat-icon></a>
+    <a fxLayout class="rightIconsLast" ><mat-icon id="dropdown3">settings</mat-icon></a>
+</mat-toolbar>
+
+
+
+
+<div *ngIf="visible1"  class="dropDown1" (click)="clickInside1()">
+
+  <div class="contentWrapper1" id="dropdown1popUp" >
+    <div class="headerDropDown1" >
+      <div fxLayout="row" fxLayoutAlign="space-between">
+          <div class="notifications">Notifications</div>
+      </div>
+    </div>
+
+    <mat-nav-list class="notificationsList">
+
+      <a mat-list-item fxLayout="row" *ngFor="let user of userVisitedMe" routerLink="/profile/profile-visitors" (click)="visible1 = false">
+        <div class="imageNotification" >
+
+          <img *ngIf="user[3]" src="{{user[3]}}" width="60px" height="60px">
+          <img width="60px" height="60px" *ngIf="!user[3]"  src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+        </div>
+        <div class="profileVisiotor">
+          <div class="pVtext">
+          <b>{{user[1]}}</b> has visited your profile!
+          </div>
+          <div class="pVtime" fxLayout="row">
+            <mat-icon>visibility</mat-icon> <span>{{user[6]}}</span>
+          </div>
+        </div>
+      </a>
+
+    </mat-nav-list>
+
+  </div>
+</div>
+
+
+
+<div *ngIf="visible2"  class="dropDown2" (click)="clickInside2()">
+  <div class="contentWrapper1" id="dropdown2popUp" >
+    <div class="headerDropDown1" >
+      <div fxLayout="row" fxLayoutAlign="space-between">
+          <div class="notifications">Messages</div>
+      </div>
+    </div>
+    <mat-nav-list class="notificationsList">
+      <a  *ngFor="let user of userReceiverAllData"  routerLink="/conversations/inbox/{{user.chatID}}"  (click)="visible2 = false" mat-list-item fxLayout="row" >
+        <div class="imageNotification">
+          <img *ngIf="user.picUrl" height="60px" width="60px" src="{{user.picUrl}}"  >
+          <img *ngIf="!user.picUrl"  height="60px" width="60px" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+        </div>
+        <div class="messages">
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <div class="messagesName">
+              <b>{{user.userName}}</b>
+            </div>
+            <div class="time">{{user.dateHuman}}</div>
+          </div>
+          <div class="messageText">
+            <div *ngFor="let message of user.messages ; last as isLast " >
+              <div *ngIf="isLast">{{ (message.message.length>6)? (message.message | slice:0:6)+'..':(message.message) }}</div>
+             </div>
+          </div>
+        </div>
+      </a>
+
+
+
+
+    </mat-nav-list>
+    <div class="bottomWrapper">
+      <div class="showAll"><a routerLink="/conversations" (click)="visible2 = false">show all</a></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="visible" class="dropDown3" (click)="clickInside3()">
+  <div class="contentWrapper" id="dropdown3popUp" >
+    <div class="dropDownHeader" >
+
+      <div fxLayout="row" class="imageHeader">
+        <img *ngIf="userUrl == null"height="40px" width="40px" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+        <img *ngIf="userUrl != null" height="40px" width="40px" src="{{userUrl}}">
+        <div>
+          <div class="name"> {{userDisplayName}} </div>
+          <div class="email">{{userEmail}}</div>
+        </div>
+      </div>
+    </div>
+
+    <mat-nav-list class="dropDownTrips">
+      <a (click)="visible = false"  mat-list-item routerLink="/trips" >
+        <mat-icon>public</mat-icon>
+        <span class="nav-caption">Trips</span>
+      </a>
+      <a mat-list-item routerLink="/tips" (click)="visible = false">
+        <mat-icon>info</mat-icon>
+        <span class="nav-caption">Travel Tips</span>
+      </a>
+      <a class="lastItem" mat-list-item routerLink="/faq" (click)="visible = false" >
+        <mat-icon>help</mat-icon>
+        <span class="nav-caption">Need Help</span>
+      </a>
+
+    </mat-nav-list>
+    <mat-nav-list class="dropDownProfile">
+      <a mat-list-item routerLink="/profile" (click)="visible = false">
+        <mat-icon>account_box</mat-icon>
+        <span class="nav-caption">My Profile</span>
+      </a>
+      <a mat-list-item routerLink="/profile/settings" (click)="visible = false" >
+        <mat-icon>settings</mat-icon>
+        <span class="nav-caption">Settings</span>
+      </a>
+      <a class="lastItem" mat-list-item (click)="onLogout()" >
+        <mat-icon>exit_to_app</mat-icon>
+        <span class="nav-caption">Logout</span>
+      </a>
+    </mat-nav-list>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+.headerInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 20px;
+  width: 270px;
+  margin-bottom: 20px;
+}
+
+
+.headerInput mat-icon {
+  color: black;
+  opacity: 0.6;
+}
+
+h1 {
+  padding: 0px;
+  margin:0px;
+  font-size: 18px;
+  color: black;
+  opacity: 0.96;
+}
+.headerInput button{
+  background-color: none;
+  border: none;
+  cursor: pointer;
+}
+
+.lastRow {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lastRow span {
+  font-weight: bolder;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+
+.header {
+  font-size: 1.75rem;
+font-weight: 400;
+line-height: 2.25rem;
+color: #202124;
+padding:0px;
+margin: 0px;
+margin-top: 20px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+  opacity: 0.65;
+  margin-bottom:10px;
+}
+
+.specialColor {
+  color: white;
+  width: 170px;
+  margin-left: 1px;
+  margin-top: 5px;
+  border-color: orange;
+  background-color: #FE4E23;
+  cursor: pointer;
+  border-radius: 4px;
+}

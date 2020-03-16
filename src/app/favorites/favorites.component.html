@@ -1,0 +1,60 @@
+<div class="slideEffect"  [@slideInOut] >
+
+
+
+
+  <div class="containerImages"  fxLayout="row">
+
+  <div>
+    <div>
+      <h1 class="header">Favorites</h1>
+      <div class="subtitle">Your favorite users. You can remove users by clicking the star.</div>
+    </div>
+
+
+
+    <mat-spinner *ngIf="spinner" [diameter]="20"> </mat-spinner>
+    <div *ngIf="!spinner" fxLayout="row"  >
+
+
+      <div *ngFor="let user of userData | async" class="SecondContainerImages">
+      <a  *ngIf ="myId != user.id && userIDinArray(user.id)" class="imagePerson" >
+
+        <div (click)="goToUser(user.id, user.displayName)" class="imageImgContainer example-ripple-container mat-elevation-z4 hoverEffect" matRipple>
+          <img *ngIf="user.url" src="{{user.url}}"  >
+          <img *ngIf="!user.url"  src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+          <mat-icon *ngIf="verified">check_circle</mat-icon>
+        </div>
+        <div class="bottomContainer" fxLayout="row" fxLayoutAlign="space-between">
+          <div class="names">
+            <a class="imageName" >
+              {{user.displayName}}, {{user.bDay}}
+              <span class="dot"></span>
+            </a>
+             <div class="imageFrom" >
+                {{user.country}}
+              </div>
+            </div>
+            <a  class="icons">
+
+
+            <mat-icon  *ngIf="!userIDinArray(user.id)" class="starFollow" (click)="followUser(user.id)"   matTooltip="Add to favorites">star</mat-icon >
+            <mat-icon *ngIf="userIDinArray(user.id)" class="starFollowed" (click)="removeUser(user.id)"  matTooltip="Remove from favorites" >star</mat-icon>
+
+            </a>
+          </div>
+        </a>
+    </div>
+
+
+  </div>
+
+
+  </div>
+
+  </div>
+
+
+
+
+</div>

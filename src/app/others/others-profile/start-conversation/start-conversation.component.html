@@ -1,0 +1,20 @@
+
+  <div class="headerInput">
+
+    <div class="imageAndNames">
+      <img *ngIf="userDatas[0]" height="40px" width="40px" src="{{userDatas[0]}}"/>
+      <img *ngIf="!userDatas[0]"  height="40px" width="40px" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8"/>
+    <div class="name"> {{userDatas[1]}}</div> <div class="age">, {{userDatas[2]}} </div>
+    </div>
+
+    <button  [mat-dialog-close]> <mat-icon>close</mat-icon></button>
+  </div>
+  <div>
+
+  <textarea placeholder="Message"[(ngModel)]="message" required maxlength="500">{{message}}</textarea>
+  </div>
+
+
+  <div class="lastRow">
+    <button mat-raised-button class="specialColor"  (click)="sendMessage()" [mat-dialog-close]>Send</button>
+  <div>

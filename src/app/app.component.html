@@ -1,21 +1,185 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<router-outlet></router-outlet>
+<div class="authSection" *ngIf="isAuth">
+
+<app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+
+<mat-drawer-container >
+<mat-drawer    fxLayout="column" mode="side" #sidenav  [opened]="sideNavOpen">
+  <div class="side-nav" fxHide.md fxHide.sm fxHide.xs>
+    <mat-nav-list *ngIf="isAdmin" >
+      <a *ngIf="isAdmin" mat-list-item routerLink="/admin/dashboard/fakes" >
+        <mat-icon>insert_emoticon</mat-icon> <span class="nav-caption">Fake Accounts</span>
+      </a>
+
+      <a *ngIf="isAdmin" mat-list-item routerLink="/admin/dashboard/scout" >
+        <mat-icon>check_box</mat-icon> <span class="nav-caption">Scout System</span>
+      </a>
+
+      <a *ngIf="isAdmin" mat-list-item routerLink="/admin/dashboard/datas" >
+        <mat-icon>data_usage</mat-icon> <span class="nav-caption">Datas..</span>
+      </a>
+    </mat-nav-list>
+
+    <mat-nav-list *ngIf="!isAdmin">
+
+      <a *ngIf=" gender == 'Male'" mat-list-item routerLink="/browse/girls" >
+        <mat-icon>explore</mat-icon> <span class="nav-caption">Browse</span>
+      </a>
+      <a *ngIf=" gender == 'Female'" mat-list-item routerLink="/browse/man" >
+        <mat-icon>explore</mat-icon> <span class="nav-caption">Browse</span>
+      </a>
+
+
+      <a *ngIf="!tripsActive"  mat-list-item routerLink="/trips" >
+        <mat-icon>public</mat-icon>
+        <span class="nav-caption">Trips</span>
+      </a>
+      <a *ngIf="tripsActive"  mat-list-item routerLink="/trips" class="activated" >
+        <mat-icon>public</mat-icon>
+        <span class="nav-caption">Trips</span>
+      </a>
+
+      <a *ngIf="!favoritesActive" mat-list-item routerLink="/favorites" >
+        <mat-icon>star</mat-icon>
+        <span class="nav-caption">Favorites</span>
+      </a>
+      <a *ngIf="favoritesActive" mat-list-item routerLink="/favorites"  class="activated">
+        <mat-icon>star</mat-icon>
+        <span class="nav-caption">Favorites</span>
+      </a>
+
+
+      <a *ngIf="!conversationsActive" mat-list-item routerLink="/conversations/inbox/{{lastChatId}}" >
+        <mat-icon>chat_bubble</mat-icon>
+        <span class="nav-caption">Conversations</span>
+      </a>
+      <a *ngIf="conversationsActive" mat-list-item routerLink="/conversations/inbox/{{lastChatId}}"class="activated">
+        <mat-icon>chat_bubble</mat-icon>
+        <span class="nav-caption">Conversations </span>
+      </a>
+
+
+      <mat-expansion-panel  [expanded]="step === 0" (opened)="setStep(0)"  >
+        <mat-expansion-panel-header >
+          <mat-panel-title >
+            <mat-icon>account_box</mat-icon> <span class="nav-captionEx">My Profile</span>
+          </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="profileNav">
+            <a mat-list-item routerLink="/profile">
+                <div class="navProfile">Public Profile</div>
+            </a>
+          <a mat-list-item routerLink="/profile/profile-visitors">
+              <div class="navProfile">Profile Visitors  <span class="messagePopUp"  *ngIf="count != 0 && count >0 ">{{count}}</span> </div>
+          </a>
+          <a mat-list-item routerLink="/profile/edit-profile">
+             <div class="navProfile">Edit Profile</div>
+          </a>
+          <a mat-list-item routerLink="/profile/settings">
+             <div class="navProfile" >Settings</div>
+          </a>
+       </div>
+      </mat-expansion-panel>
+
+    </mat-nav-list>
+  </div>
+
+
+  <div class="side-nav-mobile" fxHide.lg>
+
+
+
+    <mat-nav-list *ngIf="!isAdmin">
+
+
+      <a  *ngIf="!tripsActive && !premiumLocal"  mat-list-item routerLink="/profile/membership" >
+        <mat-icon>brightness_low</mat-icon>
+        <span class="nav-caption">Premium Account</span>
+      </a>
+
+      <a   *ngIf="!tripsActive && premiumLocal"  mat-list-item routerLink="/profile/membership" >
+        <mat-icon>brightness_low</mat-icon>
+        <span class="nav-caption">Premium Account</span>
+      </a>
+
+
+
+
+      <a *ngIf=" gender == 'Male'" mat-list-item routerLink="/browse/girls" >
+        <mat-icon>explore</mat-icon> <span class="nav-caption">Browse</span>
+      </a>
+      <a *ngIf=" gender == 'Female'" mat-list-item routerLink="/browse/man" >
+        <mat-icon>explore</mat-icon> <span class="nav-caption">Browse</span>
+      </a>
+
+
+      <a *ngIf="!tripsActive"  mat-list-item routerLink="/trips" >
+        <mat-icon>public</mat-icon>
+        <span class="nav-caption">Trips</span>
+      </a>
+      <a *ngIf="tripsActive"  mat-list-item routerLink="/trips" class="activated" >
+        <mat-icon>public</mat-icon>
+        <span class="nav-caption">Trips</span>
+      </a>
+
+      <a *ngIf="!favoritesActive" mat-list-item routerLink="/favorites" >
+        <mat-icon>star</mat-icon>
+        <span class="nav-caption">Favorites</span>
+      </a>
+      <a *ngIf="favoritesActive" mat-list-item routerLink="/favorites"  class="activated">
+        <mat-icon>star</mat-icon>
+        <span class="nav-caption">Favorites</span>
+      </a>
+
+
+      <a *ngIf="!conversationsActive" mat-list-item routerLink="/conversations/inbox/{{lastChatId}}" >
+        <mat-icon>chat_bubble</mat-icon>
+        <span class="nav-caption">Conversations</span>
+      </a>
+      <a *ngIf="conversationsActive" mat-list-item routerLink="/conversations/inbox/{{lastChatId}}"class="activated">
+        <mat-icon>chat_bubble</mat-icon>
+        <span class="nav-caption">Conversations </span>
+      </a>
+
+
+      <mat-expansion-panel  [expanded]="step === 0" (opened)="setStep(0)"  >
+        <mat-expansion-panel-header >
+          <mat-panel-title >
+            <mat-icon>account_box</mat-icon> <span class="nav-captionEx">My Profile</span>
+          </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="profileNav">
+            <a mat-list-item routerLink="/profile">
+                <div class="navProfile">Public Profile</div>
+            </a>
+          <a mat-list-item routerLink="/profile/profile-visitors">
+              <div class="navProfile">Profile Visitors  <span class="messagePopUp"  *ngIf="count != 0 && count >0 ">{{count}}</span> </div>
+          </a>
+          <a mat-list-item routerLink="/profile/edit-profile">
+             <div class="navProfile">Edit Profile</div>
+          </a>
+          <a mat-list-item routerLink="/profile/settings">
+             <div class="navProfile" >Settings</div>
+          </a>
+       </div>
+      </mat-expansion-panel>
+
+    </mat-nav-list>
+
+
+  </div>
+
+
+</mat-drawer>
+
+  <mat-drawer-content >
+      <div class="container" >
+          <router-outlet > </router-outlet>
+            <app-pages ></app-pages>
+        </div>
+  </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+
+
+  <app-welcome *ngIf="!isAuth"> </app-welcome>

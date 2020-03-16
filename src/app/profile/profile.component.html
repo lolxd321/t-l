@@ -1,0 +1,176 @@
+<div class="slideEffect"  [@slideInOut] >
+
+
+
+      <div fxLayout="row" fxLayoutAlign="space-between" >
+
+        <div fxLayout="row">
+
+          <div>
+            <div class="imageMyProfile">
+              <img *ngIf="!!urlPic" src="{{urlPic}}" height="150px" width="150px">
+              <img *ngIf="!urlPic" height="150px" width="150px" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+            </div>
+          </div>
+
+          <div class="middleContainer">
+            <div class="nameProfile">{{displayName}}, {{bDay}}</div>
+
+
+              <div *ngIf="countryName" class="itemInfo">
+                <div class="infoClass">Country:</div>
+                <div class="editContainer">
+                <div class="itemValue">
+                  <div class="itemName">{{countryName}}<span *ngIf="!!stateName">, </span> <span>{{stateName}}</span>
+                    <span *ngIf="!!cityName">, </span><span>{{cityName}}</span></div>
+              </div>
+              </div>
+            </div>
+
+              <div  class="itemInfo">
+
+               <div class="infoClass">Sex:</div>
+               <div class="editContainer">
+                 <div class="itemValue">{{gender}}</div>
+              </div>
+              </div>
+
+              <div  *ngIf="languages" class="itemInfo">
+                 <div class="infoClass">Spoken languages:</div>
+                 <div class="editContainer">
+                 <div class="itemName">
+                   <span *ngFor="let language of languages ; last as isLast" >
+                    <span *ngIf="isLast">{{language}}</span>
+                    <span *ngIf="!isLast">{{language + ", "}}</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div *ngIf="height" class="itemInfo">
+               <div class="infoClass">Height:</div>
+               <div class="editContainer">
+                 <div class="itemValue">
+                   <span *ngIf="height">{{height + " cm"}}</span>
+                 </div>
+              </div>
+              </div>
+
+              <div  *ngIf="bodyType" class="itemInfo">
+                <div class="infoClass">Body type:</div>
+                <div class="editContainer">
+                  <div class="itemValue"><span *ngIf="bodyType">{{bodyType}}</span></div>
+                </div>
+              </div>
+
+              <div  *ngIf="eyes" class="itemInfo">
+               <div class="infoClass">Eyes:</div>
+               <div class="editContainer">
+                 <div class="itemValue"><span *ngIf="eyes">{{eyes}}</span></div>
+              </div>
+              </div>
+
+              <div  *ngIf="hair" class="itemInfo">
+               <div class="infoClass">Hair:</div>
+               <div class="editContainer">
+                 <div class="itemValue"><span *ngIf="hair">{{hair}}</span></div>
+              </div>
+              </div>
+
+              <div  *ngIf="lookingFor" class="itemInfo">
+               <div class="infoClass">Looking for:</div>
+               <div class="editContainer">
+               <div class="itemValue">
+                 <span *ngFor="let looking of lookingFor ; last as isLast" >
+                   <span *ngIf="isLast">{{looking}}</span>
+                   <span *ngIf="!isLast">{{looking + ", "}}</span>
+               </span>
+               </div>
+             </div>
+              </div>
+
+
+              <div *ngIf="showVisits else loading"class="itemInfo2">
+               <div   class="infoClass">Wants to visit:</div>
+               <div class="editContainer2">
+                 <div class="itemValue" *ngFor="let visit of userVisits | async" >
+                   <div class="visitContainer">
+                     <div class="visitLocation">
+                       <span class="flag-icon flag-icon-{{visit.dataArray[0]}}"> </span>
+                       <span>{{visit.dataArray[1]}}<span *ngIf="!!visit.dataArray[2]">, </span>{{visit.dataArray[2]}} <span *ngIf="!!visit.dataArray[3]">, </span>{{visit.dataArray[3]}}</span>
+                     </div>
+                     <div class="visitFromTo">
+                       <span *ngIf="!!visit.dataArray[4]"> ({{ visit.dataArray[4].toDate() | date: 'medium' | date }} - </span><span *ngIf="!!visit.dataArray[5]"> {{ visit.dataArray[5].toDate() | date: 'medium' | date }}) </span>
+                     </div>
+                  </div>
+                 </div>
+               </div>
+              </div>
+
+              <ng-template #loading class="itemInfo2">
+               <div   class="infoClass"></div>
+               <div class="editContainer2">
+                 <div class="itemValue" *ngFor="let visit of userVisits | async" >
+                   <div class="visitContainer">
+                     <div class="visitLocation">
+                       <span class="flag-icon flag-icon-{{visit.dataArray[0]}}"> </span>
+                       <span>{{visit.dataArray[1]}}<span *ngIf="!!visit.dataArray[2]">, </span>{{visit.dataArray[2]}} <span *ngIf="!!visit.dataArray[3]">, </span>{{visit.dataArray[3]}}</span>
+                     </div>
+                     <div class="visitFromTo">
+                       <span *ngIf="!!visit.dataArray[4]"> ({{ visit.dataArray[4].toDate() | date: 'medium' | date }} - </span><span *ngIf="!!visit.dataArray[5]"> {{ visit.dataArray[5].toDate() | date: 'medium' | date }}) </span>
+                     </div>
+                  </div>
+                 </div>
+               </div>
+              </ng-template>
+
+
+
+
+              <div  class="itemInfoLast">
+                <div class="infoClass"> About me:</div>
+                <div class="editContainer">
+                <div class="itemValueLast">
+                  <span *ngIf="aboutMe">{{aboutMe}}</span>
+                  <span *ngIf="!aboutMe">Hi there! I am new on travel-ladies. </span>
+                </div>
+              </div>
+              </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="imageContainer">
+      <div class="picturesTitle"> Public pictures: </div>
+
+        <div class="moreIMagesContainer">
+
+
+          <div  class="completeImage" *ngFor="let userPic of userPics | async">
+            <div *ngIf="userPic.public" class="moreImages" matRipple>
+              <img height="270" width="270" src="{{userPic.url_image}}">
+            </div>
+
+            <div *ngIf="userPic.private"class="moreImagesPrivate" matRipple>
+              <div>
+              <mat-icon>lock</mat-icon>
+              <div class="subTextPrivate">Private Photo</div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+      </div>
+
+</div>

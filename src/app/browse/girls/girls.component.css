@@ -1,0 +1,546 @@
+.tableFloat {
+   display: table-cell;
+   vertical-align: middle;
+   float: left;
+   height: 280px;
+}
+
+.mat-table  {
+  background-color: white;
+  max-width: 1050px;
+}
+
+.dotMobileDevice {
+  display: none;
+}
+
+.paginator {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  background-color: white;
+  max-width: 1050px;
+}
+
+
+
+
+.containerImages {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.mat-spinner {
+  margin-top:20px;
+}
+.containerBrowse {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1300px;
+  justify-content: space-between;
+}
+.SecondContainerImages {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.header {
+  font-size: 1.75rem;
+font-weight: 400;
+line-height: 2.25rem;
+color: #202124;
+padding:0px;
+margin: 0px;
+}
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+  opacity: 0.65;
+  margin-bottom: 10px;
+
+}
+.righContainer {
+  margin-top: 20px;
+}
+
+.icons mat-icon {
+  font-size: 25px;
+  width: 25px;
+  height: 25px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  opacity: 0.8;
+
+}
+
+.imageImgContainer mat-icon {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  color: #4BB3E3;
+  font-size: 30px;
+}
+
+.imagePerson {
+  width: 180px;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 25px;
+  margin-bottom: 25px;
+
+}
+
+
+ .imageName {
+   font-size: 16px;
+   color: black;
+   opacity: 0.96;
+ }
+
+ .imageFrom {
+   font-size: 14px;
+   color: black;
+   opacity: 0.5;
+ }
+
+.imageImgContainer {
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 2px;
+  border-bottom: 1px solid #CDCCCD;
+}
+
+
+
+.imageImgContainer:hover{
+    opacity: 0.9;
+}
+
+.imageImgContainer img {
+  width: 180px;
+  height: 180px;
+  border-radius: 2px;
+}
+
+.bottomContainer {
+  padding: 15px;
+  opacity: 0.96;
+  height: 70px;
+}
+
+.searchInput {
+  background-color: white;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  padding: 10px 0px 0px 0px;
+}
+.searchTop {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  opacity: 0.9;
+  margin-bottom: 1px;
+  margin-left: 20px;
+}
+
+.subTest {
+  font-size: 10px;
+  color: black;
+  opacity:0.5;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+
+mat-radio-button {
+  margin-left: 20px;
+}
+
+
+.inputVisit{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+
+
+.browse{
+  background-color: #F7F7F7;
+  font-weight: bold;
+
+}
+
+.topFilter mat-icon {
+  margin-right:20px;
+}
+
+
+
+mat-expansion-panel-header  {
+  padding-left: 20px;
+  width: 220px;
+}
+
+.ageTitle {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  opacity: 0.9;
+}
+
+.filterDropdown {
+  display: none;
+}
+
+.name  {
+  margin-right: 5px;
+  font-size: 13px;
+  width: 80px;
+}
+
+.test {
+  width: 119px;
+}
+
+.name input {
+  width: 50px;
+}
+
+
+
+.description {
+  margin-right: 5px;
+  font-size: 13px;
+  width: 80px;
+}
+
+.bottomContainerFilter select {
+  width: 125px;
+}
+
+.mat-form-field {
+  margin: 0px;
+  padding: 0px;
+}
+
+.ageContainer select {
+  width: 60px;
+  margin-right: 5px;
+}
+.heightContainer select {
+  width: 60px;
+  margin-right: 5px;
+}
+
+.languageContainer, .fromContainer ,.lookingForContainer, .ageContainer, .eyesContainer, .nameContainer, .hairContainer, .heightContainer, .bodyTypeContainer, .sortByContainer {
+
+   display: flex;
+   align-items: center;
+   margin-bottom:10px;
+}
+
+.ageContainer {
+  display: flex;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.stateClass {
+  width: 110px;
+  font-size: 13px;
+  margin-left:10px;
+  position: relative;
+  top:-5px;
+}
+
+.cityClass {
+  width: 110px;
+  font-size: 13px;
+  margin-left: 9px;
+  position: relative;
+  top:-5px;
+}
+
+
+.starFollowed {
+  opacity: 0.8;
+  stroke: black;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  color: #FFD402;
+}
+
+.starFollow {
+  opacity: 0.8;
+  stroke: black;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  color: #F4F5F6;
+}
+
+
+
+
+@media only screen and (max-width: 550px) {
+
+  .subtitle {
+    display: none;
+  }
+
+  .header {
+  font-size: 15px;
+  padding:0px;
+  margin-bottom: 5px;
+  }
+
+
+
+.dropDown1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.filterDropdown {
+  display: flex;
+}
+
+.filterDropdown mat-icon {
+  cursor: pointer;
+}
+
+.searchInput {
+  padding: 0px;
+  margin: 0px;
+  padding-bottom: 15px;
+  padding-left:10px;
+  padding-right: 10px;
+  padding-top: 15px;
+}
+
+.inputVisit {
+  margin: 0px;
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.stateClass  {
+  margin: 0px;
+  width: 100%;
+}
+
+.cityClass {
+  margin: 0px;
+  width: 100%;
+
+
+}
+
+.sexName {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.sex {
+  margin-left:3px;
+  margin-bottom: 15px;
+}
+
+.topSearch mat-icon {
+  float: right;
+  cursor: pointer;
+
+
+}
+
+.description, .name {
+  margin-left: 2px;
+  width: 90px;
+}
+
+
+
+
+
+
+
+.nameContainer input {
+  border: 1px solid #B6B6B6;
+  width: 100%;
+}
+ select {
+  border: 1px solid #B6B6B6;
+}
+.description {
+  width: 100px;
+}
+.languageContainer select {
+  width: 100%;
+}
+.ageContainer .description {
+  width: 200px;
+}
+.ageContainer select {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.lookingForContainer select {
+  width: 100%;
+}
+.eyesContainer select {
+  width: 100%;
+}
+.heightContainer .description {
+    width: 200px;
+}
+.heightContainer select {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.hairContainer select {
+  width: 100%;
+}
+.test {
+  width: 100%;
+}
+.bodyTypeContainer select {
+  width: 100%;
+}
+.sortByContainer select {
+  width: 100%;
+}
+.nameContainer .name  {
+  width: 100px;
+  margin-right: 6px;
+}
+
+.mobileDeviceUser {
+  display: flex;
+}
+
+
+  .containerImages {
+    margin-top: 0px;
+  }
+
+
+
+
+  .imageName {
+    font-size: 14px;
+    color: black;
+    opacity: 0.96;
+  }
+
+  .imageFrom {
+    font-size: 12px;
+    color: black;
+    opacity: 0.5;
+  }
+.topHeader {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dot {
+  display: none;
+}
+
+.dotMobileDevice {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  opacity: 0.8;
+
+}
+
+.bottomContainer {
+  display: block;
+}
+
+
+  .imagePerson {
+    background-color: none;
+    box-shadow: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-bottom: 2px;
+    margin-top:0px;
+
+    border-bottom: 1px solid #C2C2C2;
+  }
+
+
+
+   .imageName {
+     font-size: 16px;
+     color: black;
+     opacity: 0.96;
+   }
+
+   .imageFrom {
+     font-size: 14px;
+     color: black;
+     opacity: 0.5;
+   }
+
+  .imageImgContainer {
+    height: 135px;
+    width: 135px;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .imageImgContainer img {
+    width: 135px;
+    height: 135px;
+    border-radius: 2px;
+    margin-bottom: 2px;
+  }
+
+  .tableFloat {
+     height: 150px;
+  }
+
+
+  .imagePerson {
+    width: 800px;
+  }
+
+
+
+
+}

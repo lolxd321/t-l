@@ -1,0 +1,53 @@
+
+
+.radio-group-label {
+    font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+        color: rgba(0,0,0,.87);
+  }
+
+mat-radio-button {
+  padding-right: 35px;
+  margin-bottom: 5px;
+}
+
+
+.registerContainer mat-card-title {
+  margin-bottom: 20px;
+}
+
+mat-card {
+  width: 300px;
+}
+
+.buttonContainer {
+  margin-top:15px;
+}
+
+i {
+font-size: 30px;
+padding-right: 20px;
+}
+
+.fb-button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.fb-subtitle {
+  color: rgba(0,0,0,.57);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+
+
+
+@media only screen and (max-width: 950px) {
+  input {
+    width: 200px;
+  }
+
+  .termsAndConditions {
+    font-size: 10px;
+  }
+}

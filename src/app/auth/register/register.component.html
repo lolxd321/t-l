@@ -1,0 +1,93 @@
+
+
+
+
+<div class="registerContainer">
+  <mat-card-title fxLayoutAlign="center ">Register Now</mat-card-title>
+
+<section class="signup-form">
+
+
+
+
+
+    <form fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="center " #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+
+      <mat-form-field>
+            <input
+              type="name"
+              matInput
+              placeholder="Your name"
+              ngModel
+              name="name"
+              required
+              maxlength="12"
+              #nameInput="ngModel">
+          </mat-form-field>
+
+    <mat-form-field>
+          <input
+            type="email"
+            matInput
+            placeholder="Your email"
+            ngModel
+            name="email"
+            email
+            required
+            #emailInput="ngModel">
+          <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
+          <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field hintLabel="At least 6 characters long.">
+          <input
+            type="password"
+            matInput
+            placeholder="Your password"
+            ngModel
+            name="password"
+            required
+            minlength="6"
+            #pwInput="ngModel">
+          <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
+          <mat-error>Has to be at least 6 characters long.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Your birthdate"
+            [matDatepicker]="picker"
+            [max]="maxDate"
+            ngModel name="birthdate"
+            required>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+
+        <label class="radio-group-label">Gender</label>
+        <mat-radio-group name="gender" ngModel required #gender="ngModel">
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-checkbox ngModel name="agree" class="termsAndConditions" required>Agree to Terms and Conditions.</mat-checkbox>
+
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+
+
+
+        <re-captcha required (resolved)="resolved($event)" siteKey="6Ld3lt4UAAAAADYG6dJi5OI7vmt-5Wwe2u2w8_60"></re-captcha>
+
+
+      </form>
+
+
+
+
+</section>
+</div>

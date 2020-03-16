@@ -1,0 +1,64 @@
+<div class="completeEditImageContainer">
+  <div class="headerInput">
+    <h1 *ngIf="!uploading">Uploading more pictures:</h1>
+    <h1 *ngIf="uploading">Uploading picture: </h1>
+    <button *ngIf="!uploading"  [mat-dialog-close]> <mat-icon>close</mat-icon></button>
+    <mat-spinner *ngIf="uploading" [diameter]="20"> </mat-spinner>
+  </div>
+
+  <div *ngIf="!uploading" class="subText">Cheer up and send us your happy face. This website is for people with a lust for life :)</div>
+  <div *ngIf="uploading" class="subText">Please do not close Pop-up. Pop-up will close automatically. </div>
+
+  <mat-progress-bar *ngIf="uploading" mode="determinate" value="{{uploadPercent | async}}"></mat-progress-bar>
+
+  <div *ngIf="showImage">
+    <div *ngIf="showInfoBox">
+    <div class="containerInfo">
+
+      <div (click)="fileInput.click()" class="addImageContainer">
+        <mat-icon> add_a_photo</mat-icon>
+      </div>
+
+      <div class="infos">
+        <div class="infoHeader">You are not allowed to upload:</div>
+
+          <li class="list">Explicit photos</li>
+          <li class="list">Photos without you</li>
+          <li class="list">Group photos</li>
+          <li class="list">Photos of a child</li>
+          <li class="list">Animal photos</li>
+          <li class="list">Images of celebrities</li>
+          <li class="list">Copyrighted material</li>
+      </div>
+    </div>
+
+    <div class="info2">
+        NOTE:<br>
+        Please upload natural and travel related photos.<br>
+        Professional photo shoots or photoshopped images are not welcome.<br>
+        The administrator can change your main photo. We care about the site's general image.
+    </div>
+
+    <input hidden (change)="fileChangeEvent($event)" #fileInput type="file" id="file">
+
+    </div>
+
+    <image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="1/1"
+        [cropperMinWidth] ="300"
+        [cropperMinHeight] = "300"
+        format="png"
+        (imageCropped)="imageCropped($event)"
+    >
+    </image-cropper>
+  </div>
+
+
+
+  <div *ngIf="!uploading" class="lastRow">
+    <button mat-button  [mat-dialog-close]><span>Exit</span></button>
+    <button (click)="upload()" mat-button color="primary"  color="primary"><span>Update</span></button>
+  <div>
+</div>

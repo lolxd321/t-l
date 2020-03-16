@@ -1,0 +1,239 @@
+.imageMyProfile img {
+  border-radius: 50%;
+  border: 1px solid #DADCE0;
+  cursor: pointer;
+}
+
+.selectLocations select {
+  margin-right: 5px;
+}
+
+.imageMyProfile {
+  margin-top:25px;
+}
+.middleContainer {
+  border: 1px solid #DADCE0;
+  border-radius: 10px;
+  padding: 15px 0px 0px 15px;
+  margin-top: 25px;
+  margin-left: 30px;
+}
+
+.buttonsInput button {
+  margin-left: 15px;
+}
+
+
+.nameProfile {
+  font-size: 24px;
+font-family: 'Google Sans',Roboto,Arial,sans-serif;
+font-size: 1.125rem;
+font-weight: 400;
+line-height: 1.5rem;
+-webkit-hyphens: auto;
+hyphens: auto;
+word-break: break-word;
+word-wrap: break-word;
+color: #202124;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+
+.infoClass {
+  letter-spacing: .07272727em;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: black;
+  opacity: 0.65;
+  line-height: 15px;
+  width: 100px;
+}
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #DADCE0;
+  width: 700px;
+  padding-bottom: 10px;
+}
+
+.itemInfo1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #DADCE0;
+  width: 700px;
+  padding-bottom: 10px;
+  margin-top:20px;
+}
+
+.editContainer {
+  display: flex;
+  justify-content:  space-between;
+  width: 700px;
+  align-items: center;
+}
+
+.editItem mat-icon {
+  color: black;
+  opacity: 0.5;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  font-size: 25px;
+}
+
+
+
+
+.itemInfoLast {
+
+  margin-bottom: 10px;
+  width: 700px;
+}
+
+
+
+.itemValue {
+  font-size: 18px;
+  font-weight: 400;
+  hyphens: auto;
+      word-break: break-word;
+      word-wrap: break-word;
+      color: #202124;
+      letter-spacing: .00625em;
+font-family: Roboto,Arial,sans-serif;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5rem;
+}
+
+.itemValueLast {
+  font-size: 18px;
+  font-weight: 400;
+  hyphens: auto;
+      word-break: break-word;
+      word-wrap: break-word;
+      color: #202124;
+      letter-spacing: .00625em;
+font-family: Roboto,Arial,sans-serif;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5rem;
+padding-top: 10px;
+}
+
+textarea {
+  resize: vertical;
+  height: 70px;
+  width: 99%;
+  margin-top:5px;
+}
+
+.rightButtons {
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+button {
+  margin: 0 auto;
+}
+
+select {
+  width: 130px;
+}
+
+.firstRow {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.aboutMeTitle, .picturesTitle {
+  font-size: 16px;
+font-family: 'Google Sans',Roboto,Arial,sans-serif;
+line-height: 1.5rem;
+-webkit-hyphens: auto;
+hyphens: auto;
+word-break: break-word;
+word-wrap: break-word;
+color: #202124;
+font-weight: bold;
+margin-bottom: 15px;
+}
+
+.picturesTitle  {
+  margin-top: 20px;
+}
+
+.moreIMagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.moreImages {
+  width: 270px;
+  height: 270px;
+  cursor: pointer;
+}
+
+.moreImages img {
+  opacity: 0.9;
+  background-color: white;
+}
+
+.imageContainer {
+  margin-top: 20px;
+}
+
+.addPrfofile {
+  position: absolute;
+}
+
+.addPrfofile mat-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 35px;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.imageContainer button {
+  margin-bottom: 20px;
+}
+
+.completeImage {
+  background-color: white;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  height: auto;
+  width: 270px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.bottomImageContainer {
+  display: flex;
+  justify-content: space-between;
+  padding:10px;
+  color: black;
+  opacity: 0.8;
+}
+
+.bottomImageContainer mat-icon {
+  cursor: pointer;
+}
+
+.publicPrivate mat-icon {
+  margin-right: 10px;
+}
+
+.moreImages mat-icon {
+  position: absolute;
+  right: 10px;
+  color: black;
+  opacity:0.9;
+}

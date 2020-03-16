@@ -1,0 +1,348 @@
+.header {
+  font-size: 1.75rem;
+font-weight: 400;
+line-height: 2.25rem;
+color: #202124;
+padding:0px;
+margin-top: 20px;
+}
+
+.messagesName {
+  font-size:10px;
+
+}
+
+.sentInbox {
+  color: black;
+  padding-bottom: 10px;
+  font-size:14px;
+}
+
+.sent {
+  margin-left: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.trash {
+  margin-left: 15px;
+  cursor: pointer;
+  opacity: 0.85;
+  color: black;
+  text-decoration: none;
+}
+
+.inbox{
+  cursor: pointer;
+  margin-left: 15px;
+  opacity: 0.85;
+  color: black;
+  text-decoration: none;
+}
+
+.sentActivated {
+  margin-left: 15px;
+  cursor: pointer;
+  font-weight: bolder;
+  color: black;
+  opacity: 0.97;
+  text-decoration: underline;
+}
+
+.sentActivated:hover {
+    text-decoration: underline;
+}
+
+
+.trash:hover {
+    text-decoration: underline;
+}
+
+.sent:hover {
+    text-decoration: underline;
+}
+.inbox:hover {
+    text-decoration: underline;
+}
+
+
+
+.conversationsContainer {
+  min-width: 500px;
+  background-color: white;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  margin-top: 20px;
+}
+
+
+.messagesHeader {
+  color: black;
+  opacity: 0.96;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.headerContainer {
+  min-width: 250px;
+  border-bottom:1px solid #CDCCCD;
+  border-right:1px solid #CDCCCD;
+  background-color:#EFEFEF;
+}
+
+.leftCointainer {
+  border-right:1px solid #CDCCCD;
+  width: 251px;
+
+}
+
+.imageProfileHeader {
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.imageProfileHeader img {
+  border-radius: 50%;
+}
+
+.imageProfile img {
+  border-radius: 50%;
+}
+
+.nameInfosContainer {
+  border-bottom: 1px solid #CDCCCD;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  background-color: #EFEFEF;
+}
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+height: 70px;
+padding-right: 0px;
+}
+
+.messageText {
+  font-size: 13px;;
+}
+
+.nameAndText {
+  margin-left: 10px;
+}
+
+mat-nav-list .active {
+  background-color: #F6F6F6;
+}
+.nameAndText {
+  width: 168px;
+}
+
+.time {
+  color: black;
+  opacity: 0.65;
+  font-size: 8px;
+  margin-right: 5px;
+}
+
+.nameHeader {
+  color: black;
+  opacity: 0.96;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nameHeader:hover {
+  text-decoration: underline;
+  color: black;
+  opacity: 0.96;
+}
+
+
+.timeInMessageContainer {
+  opacity: 0.65;
+  font-size: 13px;
+}
+.textContainer {
+  width: 100%;
+}
+.textWrapper{
+  background-color: #EEEDEE;
+  padding: 2px;
+  min-width: 200px;
+  border-radius: 15px;
+  padding:12px;
+  max-width: 700px;
+}
+
+.textContainer {
+  display:flex;
+  margin-top:10px;
+  align-items: flex-end;
+}
+
+.imageContainerText img {
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+
+.myImage {
+  margin-left:15px;
+}
+
+.otherImage {
+  margin-right: 15px;
+}
+
+ mat-form-field{
+  width: 95%;
+  margin-top: 20px;
+}
+
+
+
+
+.textContainerMe {
+  display:flex;
+  margin-top:10px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.textWrapperMe {
+  background-color: #DCF8C6;
+  padding: 2px;
+  min-width: 200px;
+  border-radius: 15px;
+  padding:12px;
+  max-width: 700px;
+}
+
+#delete {
+  color: black;
+  opacity: 0.65;
+  visibility: hidden;
+}
+
+div span.only-show-on-hover {
+    visibility: hidden;
+}
+#hoverDelete:hover #delete   {
+    visibility: visible;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  opacity: 0.8;
+  position: absolute;
+  left: 3px;
+}
+
+.fromContainer mat-icon {
+  font-size: 15px;
+  padding:0px;
+  margin: 0px;
+}
+
+.fromContainer div {
+  font-size: 13px;
+  margin:0px;
+  padding:0px;
+  position: relative;
+  right: 8px;
+}
+
+
+
+
+.rightContainer {
+  width: 100%;
+}
+
+.bottomInput {
+ padding: 15px;
+ box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+}
+
+.bottomInput button {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.inputsSend {
+  display:flex;
+  align-items: flex-end;
+
+}
+.allMessagesContainer {
+  padding: 15px;
+  overflow-y: scroll;
+  height:400px;
+}
+
+.locked {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noConversations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lockedTitle {
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  opacity: 0.96;
+  margin-bottom: 10px;
+}
+
+.subTitle {
+  margin-bottom: 10px;
+}
+
+.lockedContent {
+  text-align: center;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  padding: 40px;
+}
+
+.lockedConversation {
+  text-align: center;
+  margin-top: 30px;
+  opacity: 0.7;
+}
+
+
+
+.locked mat-icon {
+  font-size: 300px;
+  position: absolute;
+  opacity: 0.3;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+
+.timeMessage {
+  color: black;
+  opacity: 0.65;
+  font-size: 8px;
+}
+
+.timeMessagePosition {
+  float: right;
+}

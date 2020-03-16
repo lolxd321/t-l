@@ -1,0 +1,217 @@
+<div class="flex allContainers">
+
+  <div class="fakeContainer">
+
+    <div class="headerTitle">
+      All Fake Users
+    </div>
+
+    <div class="fakeBox">
+      <mat-form-field appearance="outline" >
+        <mat-label>Search User</mat-label>
+        <input type="text" aria-label="Number" matInput >
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <div class="allUsers">
+
+      <div  class="imagePerson"*ngFor="let user of usersFake | async " >
+      <div class="flex">
+      <div class="imageImgContainer" matRipple (click)="selectFakeAccount(user.uid)">
+        <img *ngIf="user.url" src="{{user.url}}"  >
+        <img *ngIf="!user.url"  src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+      </div>
+      <div class="bottomContainer" fxLayout="row" fxLayoutAlign="space-between">
+        <div class="names">
+          <a class="imageName" >
+            {{user.displayName}}
+          </a>
+
+            <div class="visitsAndMessages">
+                <div class="visits">
+                  0 new Visits
+                </div>
+                <div class="messages">
+                  0 new messages
+                </div>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+      </div>
+      </div>
+    </div>
+</div>
+
+
+
+<div class="noFakeUsersContainer">
+  <div class="headerTitle">
+    No Fake Users
+  </div>
+
+  <div class="fakeBox">
+    <mat-form-field appearance="outline" >
+      <mat-label>Search User</mat-label>
+      <input type="text" aria-label="Number" matInput >
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <div class="allUsers">
+    <div  class="imagePerson"*ngFor="let user of usersReal | async " >
+    <div class="flex">
+    <div>
+      <div class="imageImgContainer" matRipple (click)="selectRealAccount(user.uid)">
+        <img *ngIf="user.url" src="{{user.url}}"  >
+        <img *ngIf="!user.url"  src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+      </div>
+    </div>
+
+    <div class="bottomContainer" fxLayout="row" fxLayoutAlign="space-between">
+      <div class="names">
+        <a class="imageName" >
+          {{user.displayName}}
+        </a>
+         <div class="imageFrom" >
+           {{user.country}}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="flex chooseUserContainer">
+
+  <div class="fake">
+    <div class="headerTitle">Selected Fake User: <span class="currentSelected">{{fakeUserDisplayName}} </span> </div>
+
+
+    <div class="flex">
+
+      <div>
+        <img *ngIf="!fakeUserUrl" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+        <img *ngIf="fakeUserUrl != null" src="{{fakeUserUrl}}">
+
+        <div class="myProfileVisitors">
+          <div class="profileVisitorsHeader">Profile Visitors</div>
+          <div class="profileVisotosContainer">
+            <a  *ngFor="let id of usersVisitedMe" ><b>id:</b> {{ (id.length>6)? (id | slice:0:6)+'..':(id) }}</a>
+          </div>
+        </div>
+
+        <div class="myChats">
+          <div class="profileVisitorsHeader">All Chats</div>
+          <div class="profileVisotosContainer">
+            <a  *ngFor="let id of usersVisitedMe" ><b>id:</b> {{ (id.length>6)? (id | slice:0:6)+'..':(id) }}</a>
+          </div>
+        </div>
+    </div>
+
+
+<div>
+    <div class="visitProfile flex">
+      <div>
+        <div class="visitProfileHeader">Visit User: <span class="visitUserName">{{realUserDisplayName}}</span></div>
+
+      </div>
+      <button   mat-raised-button color="primary"><mat-icon>exposure_plus_1</mat-icon></button>
+    </div>
+
+      <div class="conversationContainer">
+
+        <div class="topConversation allMessagesContainer" >
+          <div *ngIf="chatAlreadyExist == true"  >
+          <div *ngFor="let chatData of chat | async">
+              <div *ngFor="let content of chatData.content ">
+
+            <div   *ngIf="fakeUserUid == content.creator; else other">
+              <div class="messageMe">
+
+                <div class="textContainerMe">
+                    <div class="textWrapperMe">
+                      <div class="timeMessagePosition">
+                        <div class="timeMessage"> {{content.createdAT.seconds *1000 | date:'short'}}</div>
+                      </div>
+                      <div class="messageText"> {{content.message}} </div>
+                    </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <ng-template #other>
+              <div class="messageOther">
+                <div class="textContainer">
+
+                    <div class="textWrapper">
+                      <div class="timeMessagePosition">
+                        <div class="timeMessage"> {{content.createdAT.seconds *1000 | date:'short'}}</div>
+                      </div>
+                        <div class="messageText">{{content.message}}</div>
+                      </div>
+                </div>
+              </div>
+            </ng-template>
+
+
+
+          </div>
+          </div>
+        </div>
+
+
+        </div>
+
+        <div class="inputsSend"  >
+
+          <mat-form-field >
+            <textarea matInput [(ngModel)]="message" placeholder="Your message ..."></textarea>
+            </mat-form-field>
+
+
+
+            <button  *ngIf="chatAlreadyExist == false"  (click)="createNewChat()" mat-raised-button color="primary">Send</button>
+            <button  *ngIf="chatAlreadyExist == true"  (click)="createMessage()" mat-raised-button color="primary">Send</button>
+        </div>
+
+      </div>
+
+
+    </div>
+</div>
+
+
+  </div>
+
+  <div class="arrowMiddle">
+    <mat-icon matSuffix>arrow_forward</mat-icon>
+  </div>
+
+  <div class="real">
+
+
+    <div class="headerTitle">Selected Real User: </div>
+
+    <div class="userToSelect">
+    <img *ngIf="!realUserUrl" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+    <img *ngIf="realUserUrl != null" src="{{realUserUrl}}">
+
+    <div class="currentSelected">{{realUserDisplayName}} </div>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,99 @@
+
+<h1 class="header">My planned trips</h1>
+<div class="subtitle">Plan your next trip or save your states you want to visit. (From)-(To) is optional.</div>
+
+
+
+
+
+<div class="containerTrips">
+
+  <div class="countryContainer">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Country</mat-label>
+        <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" >
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)='onChangeCountry2($event.option.value)'>
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+    </div>
+
+    <div *ngIf="countryName">
+        <mat-form-field appearance="outline">
+          <mat-label>State</mat-label>
+        <input type="text" aria-label="Number" matInput [formControl]="myControl2"  [matAutocomplete]="auto2">
+        <mat-autocomplete #auto2="matAutocomplete" (optionSelected)='onChangeState2($event.option.value)'>
+          <mat-option *ngFor="let option2 of filteredOptions2 | async" [value]="option2">
+            {{option2}}
+          </mat-option>
+        </mat-autocomplete>
+         <span matSuffix class="optionalField">optional field</span>
+      </mat-form-field>
+
+    </div>
+
+    <div>
+      <mat-form-field *ngIf="stateName" appearance="outline">
+        <mat-label>City</mat-label>
+      <input type="text" aria-label="Number" matInput [formControl]="myControl3"  [matAutocomplete]="auto3">
+      <mat-autocomplete #auto3="matAutocomplete" (optionSelected)='onChangeCity3($event.option.value)'>
+        <mat-option *ngFor="let option3 of filteredOptions3 | async" [value]="option3">
+          {{option3}}
+        </mat-option>
+      </mat-autocomplete>
+      <span matSuffix class="optionalField">optional field</span>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="fromTo">
+    <mat-form-field appearance="outline">
+      <mat-label>From</mat-label>
+      <input [(ngModel)]="dateFrom" matInput [matDatepicker]="picker"[max]="maxDate" >
+      <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>To</mat-label>
+      <input [(ngModel)]="dateTo" matInput [matDatepicker]="picker2"[max]="maxDate" >
+      <mat-datepicker-toggle  matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+
+</div>
+
+<div class="lastRowButton">
+  <button (click)="updateContent()" mat-raised-button color="primary">Update</button>
+</div>
+
+
+<div class="lastContainer">
+<div class="iWantToVisit">I want to visit:</div>
+
+
+
+<div class="containerToVisit" *ngFor="let visit of userVisits | async" >
+
+  <div class="visitLocation">
+    <span class="flag-icon flag-icon-{{visit.dataArray[0]}}"> </span>
+    <span>{{visit.dataArray[1]}}<span *ngIf="!!visit.dataArray[2]">, </span>{{visit.dataArray[2]}}<span *ngIf="!!visit.dataArray[3]">, </span>{{visit.dataArray[3]}}</span>
+  </div>
+
+  <div class="visitFromTo">
+    <span *ngIf="!!visit.dataArray[4]"> {{ visit.dataArray[4].toDate() | date: 'medium' | date }} - </span><span *ngIf="!!visit.dataArray[5]"> {{ visit.dataArray[5].toDate() | date: 'medium' | date }}</span>
+  </div>
+
+  <div class="visitDelete">
+    <mat-icon (click)="deletePost(visit.id)" >delete</mat-icon>
+  </div>
+</div>
+
+</div>

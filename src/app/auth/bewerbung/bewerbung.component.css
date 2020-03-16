@@ -1,0 +1,67 @@
+.headerInput {
+  margin-bottom: 20px;
+}
+
+h1 {
+  padding: 0px;
+  margin:0px;
+  font-size: 18px;
+  color: black;
+  opacity: 0.96;
+}
+
+.subTitle {
+  font-size: 13px;
+  color: black;
+  opacity: 0.7;
+}
+
+
+
+.bottomInput {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bottomInput span {
+  font-weight: bolder;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.featureSingle {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.pleaseConsider {
+  margin-top: 20px;
+}
+
+.featureSingle mat-icon {
+  color: #49AE1D;
+  font-size: 15px;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
+
+.considerSingle mat-icon {
+  color: red;
+  font-size: 15px;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
+
+.considerSingle {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 12px;
+}

@@ -1,0 +1,576 @@
+
+mat-icon {
+  font-size: 50px;
+  color: white;
+}
+
+.headerHandy, .handyRegister {
+  display: none;
+
+}
+.test1 {
+  margin:0px;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+.arrow {
+  text-align: center;
+  margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+  margin: 8% 0;
+  position: absolute;
+  bottom: -110px;
+
+}
+.bounce {
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  60% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  60% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
+
+
+.backgroundImage {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-color: #464646;
+  color: white;
+}
+
+
+
+nav button {
+  margin-top: 10px;
+  border-radius: 2px;
+  width: 80px;
+}
+
+.loginButton {
+  font-size:15px;
+}
+.registerContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.header {
+  background-image: linear-gradient(#FFE7BD, #FFFAEA);
+  margin-bottom: 0px;
+  padding:5px;
+  border-bottom: 1px solid #FFE7BD;
+}
+
+.middlePosition {
+  margin:0px;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.slogan {
+  padding-top:15px;
+  color: white;
+  font-family: Trenda-Regular,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  text-shadow: 2px 2px #252523;
+  font-size: 36px;
+  opacity: 0.9;
+}
+
+.scroll {
+  overflow-y: scroll;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+  text-transform: none;
+  font-size: 20px;
+}
+
+h1, h2{
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+  text-transform: none;
+}
+
+h3 {
+  padding:0;
+  margin: 0;
+}
+
+header {
+  padding: 15px 0 15px 0;
+}
+
+header img {
+  width: 220px;
+  height: 80px;
+}
+
+h2 {
+      font-size: 39px;
+      font-family: Trenda-Regular,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.fb-subtitle {
+  color: rgba(0,0,0,.57);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.LeftDivider {
+  width: 100%;
+  border-bottom: 1px solid #E5E5E5;
+  margin-right: 20px;
+}
+
+.RightDivider {
+  width: 100%;
+  border-bottom: 1px solid #E5E5E5;
+  margin-left: 20px;
+}
+
+.loginRegiser {
+  margin-top:25px;
+  background-color: white;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  width: 260px;
+  color: black;
+  border-radius: 4px;
+  padding: 0px;
+  text-align: center;
+}
+
+.special {
+  border-radius: 2px;
+    background-color: #314A7E;
+    color: white;
+    border-color: #3b5998;
+    padding: 10px;
+}
+
+
+.special2 {
+
+  border-color: orange;
+  background-color: #FE4E23;
+  padding: 10px;
+  color: white;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.lrHeader {
+font-size: 22px;
+font-weight: 700;
+text-transform: none;
+color: black;
+opacity:0.9;
+padding-top:10px;
+margin-bottom:10px;
+}
+
+.lrSub {
+margin-top: 5px;
+color: #474747;
+font-size: 13px;
+margin-bottom: 10px;
+}
+
+.loginRegiser button {
+  width: 220px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.divider {
+  margin-top: 10px;
+}
+
+
+
+.girlsOnline h3{
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+  text-transform: none;
+}
+
+
+
+.imageName {
+  font-size: 13px;
+  color: black;
+  opacity: 0.96;
+}
+
+.imageFrom {
+  font-size: 10px;
+  color: black;
+  opacity: 0.5;
+}
+
+.imageImgContainer:hover{
+   opacity: 0.9;
+}
+
+.bottomContainer {
+ padding: 10px;
+ opacity: 0.96;
+}
+
+.imagePerson {
+  width: 120px;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.imageImgContainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.imageImgContainer {
+  width: 100%;
+  height: 114px;
+  overflow: hidden;
+  border-radius: 2px;
+  border-bottom: 1px solid #CDCCCD;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  opacity: 0.8;
+}
+
+.girlsOnline {
+    margin-top: 310px;
+}
+
+.girlsOnlineHeader h3 {
+  margin-bottom: 15px;
+}
+
+span {
+  color: black;
+}
+
+
+.moreContent mat-icon {
+  margin-top: 30px;
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  color: rgba(0,0,0,.57);
+}
+
+.secondContent {
+  margin-top: 50px;
+}
+
+.secondContent img {
+  margin-right: 70px;
+}
+
+article h2 {
+  color: rgba(0,0,0,.8);
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  font-size: 45px;
+font-style: normal;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+article p {
+      -webkit-tap-highlight-color: transparent;
+      font: 300 16px/1.375 Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+-webkit-font-smoothing: antialiased;
+font-size: 18px;
+color: #474747;
+}
+
+
+
+@media only screen and (max-width: 1225px) {
+
+  .backgroundImage {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:  auto;
+    color: white;
+  }
+
+  .imagePerson {
+    width: 90px;
+    background-color: white;
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+    margin-right: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .imageImgContainer img {
+    width: 100%;
+    border-radius: 2px;
+  }
+
+  .imageImgContainer {
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 2px;
+    border-bottom: 1px solid #CDCCCD;
+  }
+
+
+  .dot {
+    height: 5px;
+    width: 5px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    opacity: 0.8;
+  }
+
+  .girlsImages {
+    display: flex;
+    justify-content: center;
+  }
+
+  .girlsOnlineHeader {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .imageName {
+    font-size: 10px;
+    color: black;
+    opacity: 0.96;
+  }
+
+  .imageFrom {
+    display: none;
+  }
+
+  header img {
+    width: 200px;
+    height: 60px;
+    margin-left: 20px;
+  }
+
+  nav button {
+    margin-right: 20px;
+  }
+
+  .loginRegiser {
+    margin-right: 50px;
+  }
+
+
+  .secondContent img {
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+
+  article p {
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+
+
+  .registerContainer {
+    display: none;
+  }
+
+  .backgroundImage {
+    background: center top no-repeat #fff;
+    background-size: cover!important;
+    height: 100%;
+    width: 100%;
+  }
+
+  .middlePosition {
+    height: 100%;
+    width: 100%;
+  }
+
+
+  .girlsOnline {
+    display: none;
+  }
+
+
+
+  header img {
+    width: 200px;
+    height: 60px;
+    margin-left: 20px;
+  }
+
+  nav button {
+    margin-right: 20px;
+    padding: 5px;
+  }
+
+  .secondContent img {
+    display: none;
+  }
+
+  article p {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  article h2 {
+    color: rgba(0,0,0,.8);
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    margin-left: 10px;
+  }
+
+  article p {
+  font-size: 15px;
+  }
+
+  .test1 {
+    width: 100%;
+    margin: 0 auto;
+    height: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+
+  header {
+    display: none;
+  }
+
+  .headerHandy {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .headerHandy img {
+    width: 180px;
+    height: 50px;
+    margin-left: 20px;
+  }
+
+  .handyRegister {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+   .special {
+    width: 80%;
+    border-radius: 20px;
+    margin-bottom:15px;
+    font-size: 15px;
+    padding:10px;
+  }
+
+  .special2 {
+    width: 80%;
+    border-radius: 20px;
+    font-size: 15px;
+    padding:10px;
+  }
+
+  .secondContent {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  .middlePosition {
+    height: auto;
+    width: 100%;
+  }
+
+  .lrSub {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    opacity: 0.9;
+    display: none;
+    color: #fff;
+font-size: 50px;
+font-weight: 700;
+text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+text-transform: none;
+  }
+}

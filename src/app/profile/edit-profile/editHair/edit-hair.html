@@ -1,0 +1,24 @@
+<div class="headerInput">
+  <h1>Change your hair:</h1>
+  <button  [mat-dialog-close]> <mat-icon>close</mat-icon></button>
+</div>
+
+<div>
+  <mat-form-field>
+    <mat-label>Hair:</mat-label>
+    <mat-select  [(ngModel)]="hair" >
+       <mat-option value="Blond">Blond</mat-option>
+       <mat-option value="Brown">Brown</mat-option>
+       <mat-option value="Black">Black</mat-option>
+       <mat-option value="Red">Red</mat-option>
+       <mat-option value="Auburn">Auburn</mat-option>
+       <mat-option value="Grey">Grey</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<div class="lastRow">
+  <button mat-button  [mat-dialog-close]><span>Exit</span></button>
+  <button (click)="updateContent()" mat-button color="primary"  color="primary" [mat-dialog-close]><span>Update</span></button>
+<div>

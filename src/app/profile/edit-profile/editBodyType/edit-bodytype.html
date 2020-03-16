@@ -1,0 +1,23 @@
+<div class="headerInput">
+  <h1>Change your Body type:</h1>
+  <button  [mat-dialog-close]> <mat-icon>close</mat-icon></button>
+</div>
+
+<div>
+  <mat-form-field>
+    <mat-label>Body type:</mat-label>
+    <mat-select  [(ngModel)]="bodyType" >
+       <mat-option value="Slim">Slim</mat-option>
+       <mat-option value="Athletic">Athletic</mat-option>
+       <mat-option value="Average">Average</mat-option>
+       <mat-option value="Curvy">Curvy</mat-option>
+       <mat-option value="Heavy">Heavy</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<div class="lastRow">
+  <button mat-button  [mat-dialog-close]><span>Exit</span></button>
+  <button (click)="updateContent()" mat-button color="primary"  color="primary" [mat-dialog-close]><span>Update</span></button>
+<div>

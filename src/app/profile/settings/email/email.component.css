@@ -1,0 +1,34 @@
+.header {
+  font-size: 1.75rem;
+font-weight: 400;
+line-height: 2.25rem;
+color: #202124;
+padding:0px;
+margin: 0px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+
+.specialColor {
+  color: white;
+  width: 170px;
+  margin-left: 1px;
+  margin-top: 5px;
+  border-color: orange;
+  background-color: #FE4E23;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.field label {
+  margin-right: 15px;
+}
+
+.checkboxes {
+  margin-bottom: 25px;
+}

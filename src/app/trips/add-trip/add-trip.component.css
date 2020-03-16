@@ -1,0 +1,92 @@
+.header {
+  font-size: 1.75rem;
+font-weight: 400;
+line-height: 2.25rem;
+color: #202124;
+padding:0px;
+margin: 0px;
+margin-top: 20px;
+}
+
+.containerToVisit {
+  margin-bottom: 15px;
+}
+
+.visitDelete {
+  cursor: pointer;
+}
+
+.visitLocation {
+  width: 40%;
+}
+
+.visitFromTo {
+  width: 40%;
+}
+
+.visitDelete {
+  float: right;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+  opacity: 0.65;
+  margin-bottom:10px;
+}
+
+.containerTrips {
+  display: flex;
+  margin-top: 20px;
+}
+
+.optionalField {
+  font-size: 11px;
+  color: black;
+  opacity: 0.5;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0px;
+  padding: 0px;
+  margin: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+.countryContainer mat-form-field {
+  width: 250px;
+  margin-right: 25px;
+}
+
+.fromTo mat-form-field {
+  width: 150px;
+}
+
+.lastContainer {
+  border-top: 1px solid #EFEFEF;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.iWantToVisit {
+  color: black;
+  opacity: 0.9;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.containerToVisit {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F2FFDB;
+  border: 1px solid #EFEFEF;
+  padding: 15px;
+}
+
+.visitDelete {
+  cursor: pointer;
+}

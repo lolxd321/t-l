@@ -1,0 +1,574 @@
+
+
+<div class="slideEffect" [@slideInOut]  >
+
+
+
+
+<div  class="containerBrowse" >
+<div class="containerImages"  fxLayout="row">
+
+  <div>
+      <div class="topHeader">
+        <div>
+          <h1 class="header">Browse all {{gender}}</h1>
+          <div class="subtitle">Find intresting {{gender}} to travel with</div>
+        </div>
+        <div class="filterDropdown"(click)="dropDownFilter()">
+          <mat-icon>filter_list</mat-icon>
+        </div>
+      </div>
+
+      <div *ngIf="filterTrue" class="dropDown1" >
+
+
+
+            <div class="searchInput" >
+
+              <div  class="topSearch">
+                <mat-icon (click)="dropDownFilter()">close</mat-icon>
+              </div>
+
+               <div class="sex">
+
+
+                 <mat-radio-group >
+                    <span class="sexName"> Sex: </span>
+                   <mat-radio-button *ngIf="girlTrue" checked value="girl" (change)="handleChange($event)" >Girl</mat-radio-button>
+                   <mat-radio-button *ngIf="!girlTrue" value="girl" (change)="handleChange($event)" >Girl</mat-radio-button>
+
+                   <mat-radio-button *ngIf="manTrue" checked  value="man" (change)="handleChange($event)" >Man</mat-radio-button>
+                   <mat-radio-button *ngIf="!manTrue"   value="man" (change)="handleChange($event)" >Man</mat-radio-button>
+                 </mat-radio-group>
+             </div>
+
+
+                    <div class="inputVisit"  >
+                      <mat-form-field appearance="outline" >
+                        <mat-label>Who wants to visit</mat-label>
+                        <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" >
+                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)='onChangeCountry2($event.option.value)'>
+                          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            {{option}}
+                          </mat-option>
+                        </mat-autocomplete>
+                        <mat-icon matSuffix>location_on</mat-icon>
+                      </mat-form-field>
+
+                    </div>
+
+                    <div    *ngIf="countryName">
+                    <div class="stateClass">
+                        <mat-form-field appearance="outline" class="stateClass">
+                          <mat-label>State</mat-label>
+                        <input type="text" aria-label="Number" matInput [formControl]="myControl2"  [matAutocomplete]="auto2">
+                        <mat-autocomplete #auto2="matAutocomplete" (optionSelected)='onChangeState2($event.option.value)'>
+                          <mat-option *ngFor="let option2 of filteredOptions2 | async" [value]="option2">
+                            {{option2}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>
+                    </div>
+
+                    <div class="cityClass" *ngIf="stateName" >
+                      <mat-form-field  appearance="outline" class="cityClass">
+                        <mat-label>City</mat-label>
+                      <input type="text" aria-label="Number" matInput [formControl]="myControl3"  [matAutocomplete]="auto3">
+                      <mat-autocomplete #auto3="matAutocomplete" (optionSelected)='onChangeCity3($event.option.value)'>
+                        <mat-option *ngFor="let option3 of filteredOptions3 | async" [value]="option3">
+                          {{option3}}
+                        </mat-option>
+                      </mat-autocomplete>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="bottomContainerFilter">
+
+
+
+
+
+                        <div class="languageContainer">
+                            <div class="description"> Language: </div>
+                            <select (change)="changeLanguage($event)">
+                                <option value="all">All</option>
+                                <option value="Arabic">Arabic</option>
+                                <option value="Danish">Danish</option>
+                                <option value="German">German</option>
+                                <option value="Belorussian">Belorussian</option>
+                                <option value="Dutch">Dutch</option>
+                                <option value="Greek">Greek</option>
+                                <option value="Japanese">Japanese</option>
+                                <option value="Portuguese">Portuguese</option>
+                                <option value="Italian">Italian</option>
+                                <option value="Polish">Polish</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="Swedish">Swedish</option>
+                                <option value="Bulgarian">Bulgarian</option>
+                                <option value="English">English</option>
+                                <option value="Hebrew">Hebrew</option>
+                                <option value="Korean">Korean</option>
+                                <option value="Romanian">Romanian</option>
+                                <option value="Thai">Thai</option>
+                                <option value="Catalan">Catalan</option>
+                                <option value="Estonian">Estonian</option>
+                                <option value="Hindi">Hindi</option>
+                                <option value="Latvian">Latvian</option>
+                                <option value="Russian">Russian</option>
+                                <option value="Turkish">Turkish</option>
+                                <option value="Chinese">Chinese</option>
+                                <option value="Filipino">Filipino</option>
+                                <option value="Hungarian">Hungarian</option>
+                                <option value="Lithuanian">Lithuanian</option>
+                                <option value="Serbian">Serbian</option>
+                                <option value="Ukrainian">Ukrainian</option>
+                                <option value="Croatian">Croatian</option>
+                                <option value="Finnish">Finnish</option>
+                                <option value="Icelandic">Icelandic</option>
+                                <option value="Norwegian">Norwegian</option>
+                                <option value="Slovak">Slovak</option>
+                                <option value="Urdu">Urdu</option>
+                                <option value="Czech">Czech</option>
+                                <option value="French">French</option>
+                                <option value="Indonesian">Indonesian</option>
+                                <option value="Persian">Persian</option>
+                                <option value="Slovenian">Slovenian</option>
+                                <option value="Vietnamese">Vietnamese</option>
+                                <option value="Nepali">Nepali</option>
+                                <option value="Armenian">Armenian</option>
+                                <option value="Kurdish">Kurdish</option>
+                            </select>
+                        </div>
+
+                          <div class="ageContainer">
+                            <div class="description"> Age: </div>
+
+                              <select id="searchAgeLower" >
+                                                <option value="">From</option>
+                                                <option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option>
+                                            </select>
+
+
+
+                              <select id="searchAgeLower" >
+                                                <option value="">To</option>
+                                                <option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option>
+                                            </select>
+
+
+                          </div>
+
+
+
+
+
+                    <div  class="lookingForContainer">
+                      <div class="description">Looking for: </div>
+                        <select (change)="changelookingFor($event)">
+                          <option value="all">All</option>
+                          <option value="Friends">Friends</option>
+                          <option value="Adventure">Adventure</option>
+                          <option value="Soulmate">Soulmate</option>
+                          <option value="Job">Job</option>
+                        </select>
+                    </div>
+
+                    <div class="eyesContainer">
+                      <div class="description">Eyes: </div>
+
+                        <select (change)="changeEyes($event)">
+                          <option value="all">All</option>
+                          <option value="Brown">Brown</option>
+                          <option value="Blue">Blue</option>
+                          <option value="Green">Green</option>
+                          <option value="Hazel">Hazel</option>
+                          <option value="Gray">Gray</option>
+                          <option value="Amber">Amber</option>
+                        </select>
+
+
+                    </div>
+
+                    <div class="hairContainer">
+                      <div class="description"> Hair: </div>
+
+                        <select (change)="changeHair($event)" >
+                          <option value="all">All</option>
+                          <option value="Blond">Blond</option>
+                          <option value="Brown">Brown</option>
+                          <option value="Black">Black</option>
+                          <option value="Red">Red</option>
+                          <option value="Auburn">Auburn</option>
+                          <option value="Grey">Grey</option>
+                        </select>
+                    </div>
+
+                    <div class="nameContainer">
+                      <div class="name"> Name: </div>
+                          <input class="test" [ngModel]="nameInput" (ngModelChange)="onChangeName($event)">
+                    </div>
+
+                    <div class="heightContainer">
+                      <div class="description"> Height: </div>
+
+                        <select >
+                                                <option value="">From</option>
+                                                <option value="150">150 cm (4' 11")</option><option value="151">151 cm (4' 11")</option><option value="152">152 cm (4' 12")</option><option value="153">153 cm (5' 00")</option><option value="154">154 cm (5' 01")</option><option value="155">155 cm (5' 01")</option><option value="156">156 cm (5' 01")</option><option value="157">157 cm (5' 02")</option><option value="158">158 cm (5' 02")</option><option value="159">159 cm (5' 03")</option><option value="160">160 cm (5' 03")</option><option value="161">161 cm (5' 03")</option><option value="162">162 cm (5' 04")</option><option value="163">163 cm (5' 04")</option><option value="164">164 cm (5' 05")</option><option value="165">165 cm (5' 05")</option><option value="166">166 cm (5' 05")</option><option value="167">167 cm (5' 06")</option><option value="168">168 cm (5' 06")</option><option value="169">169 cm (5' 07")</option><option value="170">170 cm (5' 07")</option><option value="171">171 cm (5' 07")</option><option value="172">172 cm (5' 08")</option><option value="173">173 cm (5' 08")</option><option value="174">174 cm (5' 09")</option><option value="175">175 cm (5' 09")</option><option value="176">176 cm (5' 09")</option><option value="177">177 cm (5' 10")</option><option value="178">178 cm (5' 10")</option><option value="179">179 cm (5' 10")</option><option value="180">180 cm (5' 11")</option><option value="181">181 cm (5' 11")</option><option value="182">182 cm (5' 12")</option><option value="183">183 cm (6' 00")</option><option value="184">184 cm (6' 00")</option><option value="185">185 cm (6' 01")</option><option value="186">186 cm (6' 01")</option><option value="187">187 cm (6' 02")</option><option value="188">188 cm (6' 02")</option><option value="189">189 cm (6' 02")</option><option value="190">190 cm (6' 03")</option><option value="191">191 cm (6' 03")</option><option value="192">192 cm (6' 04")</option><option value="193">193 cm (6' 04")</option><option value="194">194 cm (6' 04")</option><option value="195">195 cm (6' 05")</option><option value="196">196 cm (6' 05")</option><option value="197">197 cm (6' 06")</option><option value="198">198 cm (6' 06")</option><option value="199">199 cm (6' 06")</option><option value="200">200 cm (6' 07")</option><option value="201">201 cm (6' 07")</option><option value="202">202 cm (6' 08")</option><option value="203">203 cm (6' 08")</option><option value="204">204 cm (6' 08")</option><option value="205">205 cm (6' 09")</option><option value="206">206 cm (6' 09")</option><option value="207">207 cm (6' 09")</option><option value="208">208 cm (6' 10")</option><option value="209">209 cm (6' 10")</option><option value="210">210 cm (6' 11")</option><option value="211">211 cm (6' 11")</option><option value="212">212 cm (6' 11")</option><option value="213">213 cm (6' 12")</option><option value="214">214 cm (7' 00")</option><option value="215">215 cm (7' 01")</option><option value="216">216 cm (7' 01")</option><option value="217">217 cm (7' 01")</option><option value="218">218 cm (7' 02")</option><option value="219">219 cm (7' 02")</option><option value="220">220 cm (7' 03")</option>
+                                            </select>
+
+
+                        <select >
+                                                <option value="">To</option>
+                                                <option value="150">150 cm (4' 11")</option><option value="151">151 cm (4' 11")</option><option value="152">152 cm (4' 12")</option><option value="153">153 cm (5' 00")</option><option value="154">154 cm (5' 01")</option><option value="155">155 cm (5' 01")</option><option value="156">156 cm (5' 01")</option><option value="157">157 cm (5' 02")</option><option value="158">158 cm (5' 02")</option><option value="159">159 cm (5' 03")</option><option value="160">160 cm (5' 03")</option><option value="161">161 cm (5' 03")</option><option value="162">162 cm (5' 04")</option><option value="163">163 cm (5' 04")</option><option value="164">164 cm (5' 05")</option><option value="165">165 cm (5' 05")</option><option value="166">166 cm (5' 05")</option><option value="167">167 cm (5' 06")</option><option value="168">168 cm (5' 06")</option><option value="169">169 cm (5' 07")</option><option value="170">170 cm (5' 07")</option><option value="171">171 cm (5' 07")</option><option value="172">172 cm (5' 08")</option><option value="173">173 cm (5' 08")</option><option value="174">174 cm (5' 09")</option><option value="175">175 cm (5' 09")</option><option value="176">176 cm (5' 09")</option><option value="177">177 cm (5' 10")</option><option value="178">178 cm (5' 10")</option><option value="179">179 cm (5' 10")</option><option value="180">180 cm (5' 11")</option><option value="181">181 cm (5' 11")</option><option value="182">182 cm (5' 12")</option><option value="183">183 cm (6' 00")</option><option value="184">184 cm (6' 00")</option><option value="185">185 cm (6' 01")</option><option value="186">186 cm (6' 01")</option><option value="187">187 cm (6' 02")</option><option value="188">188 cm (6' 02")</option><option value="189">189 cm (6' 02")</option><option value="190">190 cm (6' 03")</option><option value="191">191 cm (6' 03")</option><option value="192">192 cm (6' 04")</option><option value="193">193 cm (6' 04")</option><option value="194">194 cm (6' 04")</option><option value="195">195 cm (6' 05")</option><option value="196">196 cm (6' 05")</option><option value="197">197 cm (6' 06")</option><option value="198">198 cm (6' 06")</option><option value="199">199 cm (6' 06")</option><option value="200">200 cm (6' 07")</option><option value="201">201 cm (6' 07")</option><option value="202">202 cm (6' 08")</option><option value="203">203 cm (6' 08")</option><option value="204">204 cm (6' 08")</option><option value="205">205 cm (6' 09")</option><option value="206">206 cm (6' 09")</option><option value="207">207 cm (6' 09")</option><option value="208">208 cm (6' 10")</option><option value="209">209 cm (6' 10")</option><option value="210">210 cm (6' 11")</option><option value="211">211 cm (6' 11")</option><option value="212">212 cm (6' 11")</option><option value="213">213 cm (6' 12")</option><option value="214">214 cm (7' 00")</option><option value="215">215 cm (7' 01")</option><option value="216">216 cm (7' 01")</option><option value="217">217 cm (7' 01")</option><option value="218">218 cm (7' 02")</option><option value="219">219 cm (7' 02")</option><option value="220">220 cm (7' 03")</option>
+                                            </select>
+
+
+                    </div>
+
+                    <div class="bodyTypeContainer">
+                       <div class="description">Body type: </div>
+
+
+                        <select (change)="changeBodyType($event)">
+                          <option value="all">All</option>
+                          <option value="Slim">Slim</option>
+                          <option value="Athletic">Athletic</option>
+                          <option value="Average">Average</option>
+                          <option value="Curvy">Curvy</option>
+                          <option value="Heavy">Heavy</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="sortByContainer">
+                      <div class="description"> Sort by: </div>
+
+
+                        <select >
+                          <option value="volvo">Default</option>
+                          <option value="saab">Last registered</option>
+                          <option value="mercedes">Last online</option>
+                        </select>
+
+                    </div>
+
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <div id="destination"></div>
+
+      <div class="imagesContainer">
+      <table  mat-table [dataSource]="dataSource">
+
+        <ng-container   matColumnDef="position">
+          <div *matHeaderCellDef></div>
+
+            <div  class=" imagePerson" *matCellDef="let user">
+
+              <a class="mobileDeviceUser">
+
+              <div (click)="goToUser(user[0], user[1])" class="imageImgContainer example-ripple-container mat-elevation-z4 hoverEffect" matRipple>
+                <img *ngIf="user[3]" src="{{user[3]}}"  >
+                <img *ngIf="!user[3]"  src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+                <mat-icon *ngIf="verified">check_circle</mat-icon>
+              </div>
+
+              <div class="bottomContainer" fxLayout="row" fxLayoutAlign="space-between">
+
+                <div class="names">
+                  <a class="imageName" >
+                    <span  class="dotMobileDevice"></span>
+                    {{user[1]}}, {{user[2]}}
+                      <span *ngIf="user[7]" class="dot"></span>
+                  </a>
+                   <div class="imageFrom" >
+                     {{user[6]}}
+                    </div>
+                  </div>
+
+                  <a  *ngIf="false" class="icons">
+                  <mat-icon  *ngIf="!userIDinArray(user[0])" class="starFollow" (click)="followUser(user[0])"   matTooltip="Add to favorites">star</mat-icon >
+                  <mat-icon *ngIf="userIDinArray(user[0])" class="starFollowed" (click)="removeUser(user[0])"  matTooltip="Remove from favorites" >star</mat-icon>
+                  </a>
+
+                </div>
+
+              </a>
+
+
+            </div>
+
+        </ng-container>
+
+
+        <tr   *matHeaderRowDef="displayedColumns"></tr>
+        <tr class="tableFloat" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+      <mat-paginator (click)="toToTop()" class="paginator"[pageSizeOptions]="[15, 5, 30]" showFirstLastButtons></mat-paginator>
+
+  </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+  <div fxHide.md fxHide.sm fxHide.xs  class="righContainer">
+    <div class="searchInput">
+      <div>
+        <div class="topFilter" fxLayout="row" fxLayoutAlign="space-between">
+          <div class="searchTop">Filter</div>
+          <mat-icon>filter_list</mat-icon>
+        </div>
+
+        <div class="subTest"> Choose your preferred settings </div>
+      </div>
+
+       <mat-radio-group >
+         <mat-radio-button *ngIf="girlTrue" checked value="girl" (change)="handleChange($event)" >Girl</mat-radio-button>
+         <mat-radio-button *ngIf="!girlTrue" value="girl" (change)="handleChange($event)" >Girl</mat-radio-button>
+
+         <mat-radio-button *ngIf="manTrue" checked  value="man" (change)="handleChange($event)" >Man</mat-radio-button>
+         <mat-radio-button *ngIf="!manTrue"   value="man" (change)="handleChange($event)" >Man</mat-radio-button>
+       </mat-radio-group>
+
+
+
+            <div class="inputVisit"  >
+              <mat-form-field appearance="outline" >
+                <mat-label>Who wants to visit</mat-label>
+                <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" >
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)='onChangeCountry2($event.option.value)'>
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-icon matSuffix>location_on</mat-icon>
+              </mat-form-field>
+
+            </div>
+
+            <div class="flex"   *ngIf="countryName">
+            <div class="stateClass">
+                <mat-form-field appearance="outline" class="stateClass">
+                  <mat-label>State</mat-label>
+                <input type="text" aria-label="Number" matInput [formControl]="myControl2"  [matAutocomplete]="auto2">
+                <mat-autocomplete #auto2="matAutocomplete" (optionSelected)='onChangeState2($event.option.value)'>
+                  <mat-option *ngFor="let option2 of filteredOptions2 | async" [value]="option2">
+                    {{option2}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+
+            <div class="cityClass" *ngIf="stateName" >
+              <mat-form-field  appearance="outline" class="cityClass">
+                <mat-label>City</mat-label>
+              <input type="text" aria-label="Number" matInput [formControl]="myControl3"  [matAutocomplete]="auto3">
+              <mat-autocomplete #auto3="matAutocomplete" (optionSelected)='onChangeCity3($event.option.value)'>
+                <mat-option *ngFor="let option3 of filteredOptions3 | async" [value]="option3">
+                  {{option3}}
+                </mat-option>
+              </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="bottomContainerFilter">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header >
+                <mat-panel-title >
+                  More Options
+                </mat-panel-title>
+                </mat-expansion-panel-header>
+
+
+                <div class="languageContainer">
+                    <div class="description"> Language: </div>
+                    <select (change)="changeLanguage($event)">
+                        <option value="all">All</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="Danish">Danish</option>
+                        <option value="German">German</option>
+                        <option value="Belorussian">Belorussian</option>
+                        <option value="Dutch">Dutch</option>
+                        <option value="Greek">Greek</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Polish">Polish</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Swedish">Swedish</option>
+                        <option value="Bulgarian">Bulgarian</option>
+                        <option value="English">English</option>
+                        <option value="Hebrew">Hebrew</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Romanian">Romanian</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Catalan">Catalan</option>
+                        <option value="Estonian">Estonian</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Latvian">Latvian</option>
+                        <option value="Russian">Russian</option>
+                        <option value="Turkish">Turkish</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Filipino">Filipino</option>
+                        <option value="Hungarian">Hungarian</option>
+                        <option value="Lithuanian">Lithuanian</option>
+                        <option value="Serbian">Serbian</option>
+                        <option value="Ukrainian">Ukrainian</option>
+                        <option value="Croatian">Croatian</option>
+                        <option value="Finnish">Finnish</option>
+                        <option value="Icelandic">Icelandic</option>
+                        <option value="Norwegian">Norwegian</option>
+                        <option value="Slovak">Slovak</option>
+                        <option value="Urdu">Urdu</option>
+                        <option value="Czech">Czech</option>
+                        <option value="French">French</option>
+                        <option value="Indonesian">Indonesian</option>
+                        <option value="Persian">Persian</option>
+                        <option value="Slovenian">Slovenian</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                        <option value="Nepali">Nepali</option>
+                        <option value="Armenian">Armenian</option>
+                        <option value="Kurdish">Kurdish</option>
+                    </select>
+                </div>
+
+                  <div class="ageContainer">
+                    <div class="description"> Age: </div>
+                    <form class="ageInput1" >
+                      <select id="searchAgeLower" >
+                                        <option value="">From</option>
+                                        <option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option>
+                                    </select>
+                    </form>
+
+                    <form >
+                      <select id="searchAgeLower" >
+                                        <option value="">To</option>
+                                        <option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option>
+                                    </select>
+                    </form>
+
+                  </div>
+
+
+
+
+
+            <div  class="lookingForContainer">
+              <div class="description">Looking for: </div>
+                <select (change)="changelookingFor($event)">
+                  <option value="all">All</option>
+                  <option value="Friends">Friends</option>
+                  <option value="Adventure">Adventure</option>
+                  <option value="Soulmate">Soulmate</option>
+                  <option value="Job">Job</option>
+                </select>
+            </div>
+
+            <div class="eyesContainer">
+              <div class="description">Eyes: </div>
+              <form >
+                <select (change)="changeEyes($event)">
+                  <option value="all">All</option>
+                  <option value="Brown">Brown</option>
+                  <option value="Blue">Blue</option>
+                  <option value="Green">Green</option>
+                  <option value="Hazel">Hazel</option>
+                  <option value="Gray">Gray</option>
+                  <option value="Amber">Amber</option>
+                </select>
+              </form>
+
+            </div>
+
+            <div class="hairContainer">
+              <div class="description"> Hair: </div>
+              <form >
+                <select (change)="changeHair($event)" >
+                  <option value="all">All</option>
+                  <option value="Blond">Blond</option>
+                  <option value="Brown">Brown</option>
+                  <option value="Black">Black</option>
+                  <option value="Red">Red</option>
+                  <option value="Auburn">Auburn</option>
+                  <option value="Grey">Grey</option>
+                </select>
+              </form>
+            </div>
+
+            <div class="nameContainer">
+              <div class="name"> Name: </div>
+                  <input class="test" [ngModel]="nameInput" (ngModelChange)="onChangeName($event)">
+            </div>
+
+            <div class="heightContainer">
+              <div class="description"> Height: </div>
+              <form class="ageInput1" >
+                <select id="searchHeightLower" >
+                                        <option value="">From</option>
+                                        <option value="150">150 cm (4' 11")</option><option value="151">151 cm (4' 11")</option><option value="152">152 cm (4' 12")</option><option value="153">153 cm (5' 00")</option><option value="154">154 cm (5' 01")</option><option value="155">155 cm (5' 01")</option><option value="156">156 cm (5' 01")</option><option value="157">157 cm (5' 02")</option><option value="158">158 cm (5' 02")</option><option value="159">159 cm (5' 03")</option><option value="160">160 cm (5' 03")</option><option value="161">161 cm (5' 03")</option><option value="162">162 cm (5' 04")</option><option value="163">163 cm (5' 04")</option><option value="164">164 cm (5' 05")</option><option value="165">165 cm (5' 05")</option><option value="166">166 cm (5' 05")</option><option value="167">167 cm (5' 06")</option><option value="168">168 cm (5' 06")</option><option value="169">169 cm (5' 07")</option><option value="170">170 cm (5' 07")</option><option value="171">171 cm (5' 07")</option><option value="172">172 cm (5' 08")</option><option value="173">173 cm (5' 08")</option><option value="174">174 cm (5' 09")</option><option value="175">175 cm (5' 09")</option><option value="176">176 cm (5' 09")</option><option value="177">177 cm (5' 10")</option><option value="178">178 cm (5' 10")</option><option value="179">179 cm (5' 10")</option><option value="180">180 cm (5' 11")</option><option value="181">181 cm (5' 11")</option><option value="182">182 cm (5' 12")</option><option value="183">183 cm (6' 00")</option><option value="184">184 cm (6' 00")</option><option value="185">185 cm (6' 01")</option><option value="186">186 cm (6' 01")</option><option value="187">187 cm (6' 02")</option><option value="188">188 cm (6' 02")</option><option value="189">189 cm (6' 02")</option><option value="190">190 cm (6' 03")</option><option value="191">191 cm (6' 03")</option><option value="192">192 cm (6' 04")</option><option value="193">193 cm (6' 04")</option><option value="194">194 cm (6' 04")</option><option value="195">195 cm (6' 05")</option><option value="196">196 cm (6' 05")</option><option value="197">197 cm (6' 06")</option><option value="198">198 cm (6' 06")</option><option value="199">199 cm (6' 06")</option><option value="200">200 cm (6' 07")</option><option value="201">201 cm (6' 07")</option><option value="202">202 cm (6' 08")</option><option value="203">203 cm (6' 08")</option><option value="204">204 cm (6' 08")</option><option value="205">205 cm (6' 09")</option><option value="206">206 cm (6' 09")</option><option value="207">207 cm (6' 09")</option><option value="208">208 cm (6' 10")</option><option value="209">209 cm (6' 10")</option><option value="210">210 cm (6' 11")</option><option value="211">211 cm (6' 11")</option><option value="212">212 cm (6' 11")</option><option value="213">213 cm (6' 12")</option><option value="214">214 cm (7' 00")</option><option value="215">215 cm (7' 01")</option><option value="216">216 cm (7' 01")</option><option value="217">217 cm (7' 01")</option><option value="218">218 cm (7' 02")</option><option value="219">219 cm (7' 02")</option><option value="220">220 cm (7' 03")</option>
+                                    </select>
+              </form>
+              <form >
+                <select id="searchHeightLower" >
+                                        <option value="">To</option>
+                                        <option value="150">150 cm (4' 11")</option><option value="151">151 cm (4' 11")</option><option value="152">152 cm (4' 12")</option><option value="153">153 cm (5' 00")</option><option value="154">154 cm (5' 01")</option><option value="155">155 cm (5' 01")</option><option value="156">156 cm (5' 01")</option><option value="157">157 cm (5' 02")</option><option value="158">158 cm (5' 02")</option><option value="159">159 cm (5' 03")</option><option value="160">160 cm (5' 03")</option><option value="161">161 cm (5' 03")</option><option value="162">162 cm (5' 04")</option><option value="163">163 cm (5' 04")</option><option value="164">164 cm (5' 05")</option><option value="165">165 cm (5' 05")</option><option value="166">166 cm (5' 05")</option><option value="167">167 cm (5' 06")</option><option value="168">168 cm (5' 06")</option><option value="169">169 cm (5' 07")</option><option value="170">170 cm (5' 07")</option><option value="171">171 cm (5' 07")</option><option value="172">172 cm (5' 08")</option><option value="173">173 cm (5' 08")</option><option value="174">174 cm (5' 09")</option><option value="175">175 cm (5' 09")</option><option value="176">176 cm (5' 09")</option><option value="177">177 cm (5' 10")</option><option value="178">178 cm (5' 10")</option><option value="179">179 cm (5' 10")</option><option value="180">180 cm (5' 11")</option><option value="181">181 cm (5' 11")</option><option value="182">182 cm (5' 12")</option><option value="183">183 cm (6' 00")</option><option value="184">184 cm (6' 00")</option><option value="185">185 cm (6' 01")</option><option value="186">186 cm (6' 01")</option><option value="187">187 cm (6' 02")</option><option value="188">188 cm (6' 02")</option><option value="189">189 cm (6' 02")</option><option value="190">190 cm (6' 03")</option><option value="191">191 cm (6' 03")</option><option value="192">192 cm (6' 04")</option><option value="193">193 cm (6' 04")</option><option value="194">194 cm (6' 04")</option><option value="195">195 cm (6' 05")</option><option value="196">196 cm (6' 05")</option><option value="197">197 cm (6' 06")</option><option value="198">198 cm (6' 06")</option><option value="199">199 cm (6' 06")</option><option value="200">200 cm (6' 07")</option><option value="201">201 cm (6' 07")</option><option value="202">202 cm (6' 08")</option><option value="203">203 cm (6' 08")</option><option value="204">204 cm (6' 08")</option><option value="205">205 cm (6' 09")</option><option value="206">206 cm (6' 09")</option><option value="207">207 cm (6' 09")</option><option value="208">208 cm (6' 10")</option><option value="209">209 cm (6' 10")</option><option value="210">210 cm (6' 11")</option><option value="211">211 cm (6' 11")</option><option value="212">212 cm (6' 11")</option><option value="213">213 cm (6' 12")</option><option value="214">214 cm (7' 00")</option><option value="215">215 cm (7' 01")</option><option value="216">216 cm (7' 01")</option><option value="217">217 cm (7' 01")</option><option value="218">218 cm (7' 02")</option><option value="219">219 cm (7' 02")</option><option value="220">220 cm (7' 03")</option>
+                                    </select>
+              </form>
+
+            </div>
+
+            <div class="bodyTypeContainer">
+               <div class="description">Body type: </div>
+              <form >
+
+                <select (change)="changeBodyType($event)">
+                  <option value="all">All</option>
+                  <option value="Slim">Slim</option>
+                  <option value="Athletic">Athletic</option>
+                  <option value="Average">Average</option>
+                  <option value="Curvy">Curvy</option>
+                  <option value="Heavy">Heavy</option>
+                </select>
+              </form>
+            </div>
+
+
+            <div class="sortByContainer">
+              <div class="description"> Sort by: </div>
+              <form>
+
+                <select >
+                  <option value="volvo">Default</option>
+                  <option value="saab">Last registered</option>
+                  <option value="mercedes">Last online</option>
+                </select>
+              </form>
+            </div>
+            </mat-expansion-panel>
+
+          </div>
+
+
+
+    </div>
+  </div>
+  </div>
+
+</div>

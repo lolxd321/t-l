@@ -1,0 +1,281 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+.title img {
+  width: 200px;
+  height: 70px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.header {
+  background-image: linear-gradient(orange, #FFB533, orange);
+  margin-bottom: 0px;
+  border-bottom: 1px solid #FFE7BD;
+}
+
+
+
+a:hover,
+a:active {
+  color: lightgray;
+}
+
+.navigation-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+mat-toolbar{
+  opacity: 0.96;
+}
+
+.premiuemButton {
+  margin-right: 50px;
+  border-color: orange;
+  background-color: #FE4E23;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.rightIcons {
+  margin-right:20px;
+  cursor:pointer;
+}
+mat-icon {
+  text-shadow: 1px 1px #30302E;
+}
+
+.rightIconsLast {
+  margin-right: 20px;
+  cursor:pointer;
+}
+
+.dropDown3 {
+  position: absolute;
+  right: 37px;
+  top: 55px;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 270px;
+}
+
+.contentWrapper {
+  background-color:  white;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  color: black;
+  border-radius: 2px;
+  border: 1px solid #CDCCCD;
+}
+
+ img {
+  border-radius: 50%;
+}
+
+.dropDownHeader {
+    border-bottom: 1px solid #E8E8E8;
+    padding: 15px;
+}
+
+.name {
+  font-size: 18px;
+  opacity: 0.9;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.email {
+  font-size:15px;
+  opacity:0.9;
+  margin-left: 10px;
+}
+
+.dropDownTrips {
+  border-bottom: 1px solid #E8E8E8;
+}
+
+mat-nav-list {
+  opacity: 0.9;
+}
+
+mat-nav-list a:hover{
+  color: black;
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.lastItem {
+  margin-bottom: 8px;
+}
+
+
+.dropDown1 {
+  position: absolute;
+  right: 120px;
+  top: 55px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.headerDropDown1 {
+  background-color: #EEEEEE;
+  border-bottom: 1px solid #E8E8E8;
+  padding: 15px;
+}
+
+.contentWrapper1 {
+  background-color:  white;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  color: black;
+  border-radius: 2px;
+  border: 1px solid #CDCCCD;
+  width:350px;
+}
+
+.notificationsList {
+  overflow:  scroll;
+  height: 300px;
+  overflow-x: hidden;
+}
+
+
+.markAsread  a{
+  color: #385898;
+  cursor:pointer;
+}
+
+.bottomWrapper {
+  border-top: 1px solid #CDCCCD;
+  width: 330px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.showAll a {
+  color: #385898;
+  cursor:pointer;
+}
+
+.markAsread a:hover {
+  text-decoration: underline;
+}
+
+
+.dropDown1 .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+height: 90px;
+padding-right: 0px;
+}
+
+.profileVisiotor {
+  width: 225px;
+}
+
+.imageNotification img {
+  margin-right:15px;
+}
+
+.pVtime {
+  margin-top: 2px;
+}
+
+.pVtime mat-icon {
+  font-size: 20px;
+}
+.pVtime span {
+  color: black;
+  opacity: 0.65;
+  font-size: 13px;
+}
+
+
+.dropDown2 {
+  position: absolute;
+  right: 77px;
+  top: 55px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.dropDown2 .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+height: 90px;
+}
+
+.messagesName {
+  font-weight:700;
+}
+.messageText {
+  font-size: 13px;
+  margin-top:4px;
+}
+.messages {
+  width: 225px;
+}
+
+.time {
+  color: black;
+  opacity: 0.65;
+  font-size: 13px;
+}
+
+
+
+
+
+@media only screen and (max-width: 550px) {
+
+  .title img {
+    display:none;
+  }
+
+  .dropDown1 {
+    position: absolute;
+    left: 0px;
+    top: 55px;
+    z-index: 1000;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .contentWrapper1 {
+    background-color:  white;
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+    color: black;
+    border-radius: 2px;
+    border: 1px solid #CDCCCD;
+    width: 100%;
+  }
+
+  .dropDown2 {
+    position: absolute;
+    left: 0px;
+    top: 55px;
+    z-index: 1000;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .dropDown3 {
+    position: absolute;
+    left: 0px;
+    top: 55px;
+    z-index: 1000;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+
+
+}

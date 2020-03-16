@@ -1,0 +1,60 @@
+mat-nav-list {
+  opacity: 0.9;
+}
+
+.browse{
+  background-color: #F7F7F7;
+  font-weight: bold;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z])
+{
+  box-shadow: 0 0 0 0;
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 15px;
+}
+
+mat-expansion-panel-header {
+ padding-left: 16px;
+}
+.nav-captionEx {
+ display: inline-block;
+ padding-left: 15px;
+ padding-top: 2px;
+}
+.navProfile {
+  font-size: 15px;
+  padding: 0px;
+}
+
+.profileNav mat-list-item {
+  padding: 0px;
+  margin: 0px;
+}
+.side-nav {
+padding-right: 20px;
+
+}
+
+.navProfile {
+  font-size: 13px;
+}
+
+.profileVisitors {
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 2px;
+  color: black;
+  opacity: 1;
+}
+
+mat-nav-list a:hover{
+  color: black;
+}
+
+mat-panel-title:hover {
+  color:black;
+}

@@ -1,0 +1,240 @@
+
+.topRight {
+  display:flex;
+  align-items: center;
+}
+
+.imageOtherProfile {
+  margin-top:25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.imageOtherProfile img {
+  border-radius: 50%;
+  border: 1px solid #DADCE0;
+}
+
+.middleContainer {
+  border: 1px solid #DADCE0;
+  border-radius: 10px;
+  padding: 15px 0px 0px 15px;
+}
+
+.moreIMagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.moreImages {
+  width: 270px;
+  height: 270px;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.moreImages img {
+  opacity: 0.9;
+  background-color: white;
+}
+
+.middleContainer {
+  margin-top: 25px;
+  margin-left: 30px;
+}
+
+.nameProfile {
+  margin-bottom: 10px;
+}
+
+
+
+.nameProfile {
+  font-size: 24px;
+font-family: 'Google Sans',Roboto,Arial,sans-serif;
+font-size: 1.125rem;
+font-weight: 400;
+line-height: 1.5rem;
+-webkit-hyphens: auto;
+hyphens: auto;
+word-break: break-word;
+word-wrap: break-word;
+color: #202124;
+font-weight: bold;
+}
+
+.infoClass {
+  letter-spacing: .07272727em;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: black;
+  opacity: 0.65;
+  line-height: 15px;
+  width: 100px;
+}
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #DADCE0;
+  width: 700px;
+  padding-bottom: 10px;
+}
+
+.itemInfoLast {
+
+  margin-bottom: 10px;
+  width: 700px;
+}
+
+.itemInfo mat-icon {
+  margin-right: 10px;
+  font-size: 20px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  color: black;
+  opacity: 0.65;
+}
+
+.itemValue {
+  font-size: 18px;
+  font-weight: 400;
+  hyphens: auto;
+      word-break: break-word;
+      word-wrap: break-word;
+      color: #202124;
+      letter-spacing: .00625em;
+font-family: Roboto,Arial,sans-serif;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5rem;
+}
+
+.itemValueLast {
+  font-size: 18px;
+  font-weight: 400;
+  hyphens: auto;
+      word-break: break-word;
+      word-wrap: break-word;
+      color: #202124;
+      letter-spacing: .00625em;
+font-family: Roboto,Arial,sans-serif;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5rem;
+padding-top: 10px;
+}
+
+.aboutMeTitle, .picturesTitle {
+  font-size: 16px;
+font-family: 'Google Sans',Roboto,Arial,sans-serif;
+line-height: 1.5rem;
+-webkit-hyphens: auto;
+hyphens: auto;
+word-break: break-word;
+word-wrap: break-word;
+color: #202124;
+font-weight: bold;
+margin-bottom: 15px;
+}
+
+.picturesTitle  {
+  margin-top: 20px;
+}
+
+
+.aboutMe {
+  color: #5f6368;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.rightButtons {
+  margin-top: 20px;
+}
+
+.rightButtons button {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.moreImagesPrivate {
+  width: 270px;
+  height: 270px;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background-image: linear-gradient(#DADCE0, white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.moreImagesPrivate mat-icon {
+  color: black;
+  opacity: 0.65;
+  font-size: 150px;
+  height: 150px;
+  width: 150px;
+}
+
+.subTextPrivate {
+  text-align: center;
+}
+
+.row1 {
+  display:flex;
+  justify-content: space-between;
+  padding-right:15px;
+}
+
+.row1 mat-icon {
+  color:#018001;
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.specialColor {
+  color: white;
+  width: 170px;
+  margin-left: 1px;
+  margin-top: 5px;
+  border-color: orange;
+  background-color: #FE4E23;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.toFaq {
+  width: 250px;
+}
+
+.itemInfo2 {
+  display: flex;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #DADCE0;
+  width: 700px;
+  padding-bottom: 10px;
+}
+
+.editContainer2 {
+
+  width: 700px;
+
+}
+
+.visitContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+}

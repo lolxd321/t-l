@@ -1,0 +1,120 @@
+image-cropper {
+  width: 700px;
+  height: auto;
+}
+
+.completeEditImageContainer {
+  max-width:710px;
+}
+.subText {
+  color: black;
+  opacity: 0.65;
+  font-size: 14px;
+  margin-bottom: 20px;
+  width: 700px;
+}
+
+
+.infoHeader {
+  color: black;
+  opacity: 0.96;
+  font-size: 16px;
+  margin-left: 15px;
+  margin-bottom:5px;
+}
+
+.info2 {
+  color: black;
+  opacity: 0.65;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.list {
+  color: black;
+  opacity: 0.65;
+  font-size: 14px;
+  margin-bottom: 5px;
+  margin-left: 17px;
+}
+
+.containerInfo{
+  display: flex;
+}
+
+
+.showImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addImageContainer {
+  width: 200px;
+  height: 200px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #DADCE0;
+  border-radius: 10px;
+}
+
+.addImageContainer mat-icon {
+  font-size: 60px;
+  width: 60px;
+  height: 60px;
+  color: black;
+  opacity: 0.7;
+}
+
+.addImageContainer:hover {
+  background-color: #F2F4F0;
+}
+
+.headerInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 20px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+mat-form-field {
+  width: 270px;
+}
+.headerInput mat-icon {
+  color: black;
+  opacity: 0.6;
+}
+
+h1 {
+  padding: 0px;
+  margin:0px;
+  font-size: 18px;
+  color: black;
+  opacity: 0.96;
+}
+.headerInput button{
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+.lastRow {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lastRow span {
+  font-weight: bolder;
+  font-size: 14px;
+  cursor: pointer;
+}

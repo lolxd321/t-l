@@ -1,0 +1,39 @@
+<div class="slideEffect"  [@slideInOut]>
+  <h1 class="header">Settings</h1>
+  <div class="subtitle"> Some subtitle text for settings.</div>
+
+  <div fxLayout="row" class="itemsContainer">
+
+    <a class="item" routerLink="/profile/edit-profile">
+      <mat-icon>edit</mat-icon>
+      <div>Edit profile</div>
+    </a>
+
+    <a *ngIf="test" class="item" routerLink="/become-scout">
+      <mat-icon>group_add</mat-icon>
+      <div>Affiliate</div>
+    </a>
+
+    <a class="item" routerLink="/profile/settings/email">
+      <mat-icon>email</mat-icon>
+      <div>E-mail</div>
+    </a>
+
+    <a class="item" routerLink="/remind">
+      <mat-icon>delete</mat-icon>
+      <div>Change password</div>
+    </a>
+
+    <a class="item" (click)="openDeleteAccount()">
+      <mat-icon>account_box</mat-icon>
+      <div>Delete Account</div>
+    </a>
+
+    <a class="item" (click)="openHideAccount()">
+      <mat-icon>visibility_off</mat-icon>
+      <div>Hide Account</div>
+    </a>
+
+  </div>
+
+</div>

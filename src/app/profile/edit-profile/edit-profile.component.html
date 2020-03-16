@@ -1,0 +1,171 @@
+<div class="slideEffect"  [@slideInOut]>
+
+
+
+  <div fxLayout="row" >
+    <div fxLayout="row">
+
+
+        <div (click)="openEditProfilePic()" class="imageMyProfile">
+          <img *ngIf="!!urlPic" src="{{urlPic}}" height="150px" width="150px">
+          <img *ngIf="!urlPic" height="150px" width="150px" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+          <a class="addPrfofile">
+            <mat-icon >add_a_photo</mat-icon>
+          </a>
+        </div>
+
+
+
+      <div class="middleContainer">
+
+        <div class="firstRow" >
+          <div class="nameProfile">{{displayName}}, {{bDay}}</div>
+          <div class="buttonsInput">
+            <button  mat-raised-button  routerLink="/trips/add-trip" color="warn">Add Trip</button>
+          </div>
+        </div>
+
+        <div  class="itemInfo1">
+            <div class="infoClass">Location:</div>
+            <div class="editContainer">
+              <div class="itemName">{{countryName}}<span *ngIf="!!stateName">, </span> <span>{{stateName}}</span>
+              <span *ngIf="!!cityName">, </span><span>{{cityName}}</span></div>
+              <div class="editItem" (click)="openEditLocation()" ><mat-icon>edit</mat-icon></div>
+            </div>
+        </div>
+
+
+
+          <div  class="itemInfo">
+           <div class="infoClass">Spoken languages:</div>
+           <div class="editContainer">
+             <div class="itemName">
+                <span *ngFor="let language of languages ; last as isLast" >
+                  <span *ngIf="isLast">{{language}}</span>
+                  <span *ngIf="!isLast">{{language + ", "}}</span>
+              </span>
+            </div>
+             <div class="editItem" (click)="openEditLanguages()"><mat-icon>edit</mat-icon></div>
+           </div>
+          </div>
+
+
+          <div  class="itemInfo">
+            <div class="infoClass">Height:</div>
+            <div class="editContainer">
+              <div class="itemName">
+                   <span *ngIf="height">{{height + " cm"}}</span>
+             </div>
+              <div class="editItem" (click)="openEditHeight()"><mat-icon>edit</mat-icon></div>
+            </div>
+          </div>
+
+
+
+          <div  class="itemInfo">
+           <div class="infoClass">Body type:</div>
+           <div class="editContainer">
+             <div class="itemName">
+                  <span *ngIf="bodyType">{{bodyType}}</span>
+            </div>
+             <div class="editItem" (click)="openEditBodytype()"><mat-icon>edit</mat-icon></div>
+           </div>
+
+          </div>
+
+
+
+          <div  class="itemInfo">
+           <div class="infoClass">Eyes:</div>
+
+           <div class="editContainer">
+             <div class="itemName">
+                  <span *ngIf="eyes">{{eyes}}</span>
+            </div>
+             <div class="editItem" (click)="openEditEyes()"><mat-icon>edit</mat-icon></div>
+           </div>
+
+          </div>
+
+
+          <div  class="itemInfo">
+           <div class="infoClass">Hair:</div>
+           <div class="editContainer">
+             <div class="itemName">
+                  <span *ngIf="hair">{{hair}}</span>
+            </div>
+             <div class="editItem" (click)="openEditHair()"><mat-icon>edit</mat-icon></div>
+           </div>
+          </div>
+
+
+          <div  class="itemInfo">
+           <div class="infoClass">Looking for:</div>
+
+           <div class="editContainer">
+             <div class="itemName">
+               <span *ngFor="let looking of lookingFor ; last as isLast" >
+                 <span *ngIf="isLast">{{looking}}</span>
+                 <span *ngIf="!isLast">{{looking + ", "}}</span>
+             </span>
+            </div>
+             <div class="editItem" (click)="openEditLookingFor()"><mat-icon>edit</mat-icon></div>
+           </div>
+
+          </div>
+
+            <div  class="itemInfoLast">
+              <div class="infoClass"> About me:</div>
+
+              <div class="editContainer">
+                <div class="itemName">
+                   <span *ngIf="aboutMe">{{aboutMe}}</span>
+                   <span *ngIf="!aboutMe">Hi there! I am new on travel-ladies. </span>
+               </div>
+                <div class="editItem" (click)="openEditAboutMe()"><mat-icon>edit</mat-icon></div>
+              </div>
+
+            </div>
+
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="imageContainer">
+
+  <button (click)="openAddPictures()" mat-raised-button  routerLink="/profile/edit-profile" color="primary">
+    Upload photos
+    <mat-icon >add_a_photo</mat-icon>
+</button>
+
+
+
+
+
+    <div class="moreIMagesContainer" >
+
+      <div class="completeImage" *ngFor="let userPic of userPics | async">
+        <div class="moreImages" matRipple>
+          <img height="270" width="270" src="{{userPic.url_image}}">
+          <mat-icon *ngIf="userPic.public"> visibility</mat-icon>
+          <mat-icon *ngIf="userPic.private"> lock</mat-icon>
+        </div>
+        <div class="bottomImageContainer">
+          <div class="publicPrivate">
+            <mat-icon (click)="makePicturePublic(userPic.id)" matTooltip="Make photo public"> visibility</mat-icon>
+            <mat-icon (click)="makePicturePrivate(userPic.id)" matTooltip="Make photo private"> lock</mat-icon>
+          </div>
+          <div class="delete">
+          <mat-icon (click)="deletePost(userPic.id, userPic.filePath)" matTooltip="Delete photo"> delete</mat-icon>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

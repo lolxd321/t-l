@@ -1,0 +1,12 @@
+<h1 class="header">Forgot your password?</h1>
+
+<div class="subtitle">Don't worry. Enter your email address, that was used to register on this website and we will send you further instructions how to get a new password.</div>
+
+<div class="field">
+<div class="label" >Your e-mail: </div>
+<input  [(ngModel)]="email" name="email"  type="email" >
+</div>
+
+<button [disabled]="blockButton"(click)="resetPassword()" mat-raised-button class="specialColor"  >
+  Get me a new password
+</button>

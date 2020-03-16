@@ -1,0 +1,45 @@
+
+<div class="registerContainer">
+  <mat-card-title fxLayoutAlign="center ">Register with Facebook</mat-card-title>
+
+<section class="signup-form">
+
+
+
+    <form fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="center " #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+
+
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Your birthdate"
+            [matDatepicker]="picker"
+            [max]="maxDate"
+            ngModel name="birthdate"
+            required>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+
+        <label class="radio-group-label">Gender</label>
+        <mat-radio-group name="gender" ngModel required #gender="ngModel">
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-checkbox ngModel name="agree" class="termsAndConditions" required>Agree to Terms and Conditions.</mat-checkbox>
+
+
+        <button [disabled]="f.invalid"  class="fb-button" fxLayoutAlign="start" color="primary" mat-raised-button>
+          <i class="fab fa-facebook-f"></i>Log in with Facebook now</button>
+
+
+      </form>
+
+
+</section>
+</div>

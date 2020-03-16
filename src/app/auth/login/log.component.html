@@ -1,0 +1,55 @@
+
+<mat-card-title fxLayout="column" fxLayoutAlign="center">Log in now</mat-card-title>
+<section class="signup-form">
+  <form fxLayout="column"
+        fxLayoutAlign="center"
+        fxLayoutGap="10px"
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <input
+        type="email"
+        matInput
+        placeholder="Your email"
+        formControlName="email"
+        >
+        <mat-hint> Please enter a valid email. </mat-hint>
+        <mat-error>Invalid or missing email.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="password"
+        matInput
+        placeholder="Your password"
+        formControlName="password"
+>
+        <mat-hint> Please enter your password. </mat-hint>
+        <mat-error>Missing password.</mat-error>
+    </mat-form-field>
+
+
+<div class="buttonContainer" fxLayoutAlign="space-between">
+  <mat-dialog-actions>
+    <button mat-button  >Forgot password?</button>
+    <button *ngIf="!isLoading" mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
+    <mat-spinner *ngIf="isLoading"> </mat-spinner>
+  </mat-dialog-actions>
+</div>
+
+</form>
+
+<div class="divider" fxLayoutAlign="start">
+  <div class="LeftDivider"></div>
+  <div> OR </div>
+  <div class="RightDivider"></div>
+</div>
+
+<button (click)="FacebookAuthLogin()" class="fb-button" fxLayoutAlign="start" color="primary" mat-raised-button>
+  <i class="fab fa-facebook-f"></i>Log in with Facebook now</button>
+<div fxLayoutAlign="center" class="fb-subtitle">We won't post anything using your name.</div>
+
+
+
+</section>

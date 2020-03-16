@@ -1,0 +1,174 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+    font-family: Roboto,Arial,sans-serif;
+    hyphens: auto;
+    word-break: break-word;
+    letter-spacing: .01428571em;
+
+}
+
+mat-sidenav-container {
+  height: 100%;
+  overflow-y: scroll;
+
+}
+
+.authSection{
+
+  height: 100%;
+}
+
+mat-drawer {
+
+}
+
+
+
+
+mat-sidenav   {
+  position: absolute;
+  background-color: blue;
+  height: 300px;
+  width: 200px;
+  z-index: 1000003333;
+}
+
+
+.test2 {
+  opacity: 1;
+  background-color: red;
+}
+mat-sidenav    {
+  opacity: 1;
+}
+
+ mat-drawer, mat-drawer-container {
+  border: none;
+  height: 100%;
+}
+
+
+
+mat-drawer-container {
+ z-index: 100;
+}
+
+
+
+mat-nav-list {
+  opacity: 0.9;
+}
+
+
+
+.mat-expansion-panel:not([class*=mat-elevation-z])
+{
+  box-shadow: 0 0 0 0;
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 15px;
+}
+
+mat-expansion-panel-header {
+ padding-left: 16px;
+}
+.nav-captionEx {
+ display: inline-block;
+ padding-left: 15px;
+ padding-top: 2px;
+}
+.navProfile {
+  font-size: 15px;
+  padding: 0px;
+}
+
+.profileNav mat-list-item {
+  padding: 0px;
+  margin: 0px;
+}
+.side-nav {
+padding-right: 20px;
+
+}
+
+.navProfile {
+  font-size: 13px;
+}
+
+.messagePopUp {
+  font-weight: 700;
+  font-size: 16px;
+  margin-left: 2px;
+  color: black;
+  opacity: 1;
+  background-color: #f44336;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  display: inline-block;
+  color:white;
+}
+
+mat-nav-list a:hover{
+  color: black;
+}
+
+mat-panel-title:hover {
+  color:black;
+}
+
+.activated{
+  background-color: #F7F7F7;
+  color:black;
+}
+
+.inputTravel {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right:40px;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.inputText {
+  font-size:18px;
+  color: black;
+  opacity:0.9;
+}
+
+.inputSubText {
+  color: black;
+  opacity:0.65;
+  font-size:15px;
+  margin-right:10px;
+}
+
+mat-drawer-container {
+  background-image: linear-gradient(white, white);
+}
+
+mat-drawer {
+  border-right: 1px solid #DADCE0;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+}
+
+
+@media only screen and (max-width: 950px) {
+
+  .sideNavBrowser {
+    display: none;
+  }
+}

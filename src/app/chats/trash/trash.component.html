@@ -1,0 +1,175 @@
+<div class="conversationsContainer">
+
+  <div fxLayout="row">
+    <div class="headerContainer"  >
+      <div class="messagesHeader"> Conversations </div>
+      <div class="sentInbox">
+
+        <a routerLink="/conversations/inbox/{{lastChatIdInbox}}" class="inbox">Inbox</a>
+        <a routerLink="/conversations/sent/{{lastChatIdSent}}"  class="sent">Sent</a>
+        <a routerLink="/conversations/trash" class="trash">Trash</a>
+
+      </div>
+    </div>
+
+
+    <div class="nameInfosContainer" fxLayout="row"  >
+        <div class="imageProfileHeader" *ngIf="!noChatsYet"  >
+          <img *ngIf="currentUserToWriteUrl" src="{{currentUserToWriteUrl}}" height="40px" width="40px">
+          <img *ngIf="!currentUserToWriteUrl" height="40px" width="40px" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+        </div>
+        <div>
+        <a routerLink="/profile/{{currentUserToWriteID}}/{{currentUserToWriteName}}" class="nameHeader"  *ngIf="!noChatsYet"> {{currentUserToWriteName}}, {{currentUserToWriteAge}}</a>
+        <div *ngIf="currentUserToWriteCountry != null" class="fromContainer" fxLayout="row">
+          <mat-icon>location_on</mat-icon>
+          <div>{{currentUserToWriteCountry}}</div>
+        </div>
+       </div>
+    </div>
+
+
+  </div>
+
+
+<div fxLayout="row">
+
+<div class="leftCointainer" *ngIf="!noChatsYet">
+
+
+    <div class="profileContainer">
+      <mat-nav-list>
+
+
+
+        <div [class.active]="currentChatID == user.chatID" *ngFor="let user of userReceiverAllData"  >
+        <a mat-list-item fxLayout="row"  (click)="getChat(user.userID, user.chatID)" >
+          <div class="imageProfile">
+            <img *ngIf="user.picUrl" height="40px" width="40px" src="{{user.picUrl}}"  >
+            <img *ngIf="!user.picUrl"  height="40px" width="40px" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+            <span class="dot"></span>
+          </div>
+          <div class="nameAndText">
+            <div fxLayout="row" fxLayoutAlign="space-between">
+              <div class="messagesName">
+                  {{user.userName}}
+              </div>
+                <div class="time">{{user.dateHuman}}</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between" class="deleteAndmessage">
+              <div class="messageText">
+                <div *ngFor="let message of user.messages ; last as isLast " >
+                  <div *ngIf="isLast">{{ (message.message.length>6)? (message.message | slice:0:6)+'..':(message.message) }}</div>
+                 </div>
+              </div>
+
+
+            </div>
+          </div>
+        </a>
+      </div>
+
+
+
+
+
+
+      </mat-nav-list>
+    </div>
+</div>
+
+
+
+<div class="rightContainer" >
+
+  <div  class="allMessagesContainer" *ngIf="premiumLocal"  >
+
+
+    <div *ngIf="!noChatsYet">
+
+    <div *ngFor="let chatData of chat2 | async" >
+        <div *ngFor="let content of chatData.content">
+
+      <div   *ngIf="myID == content.creator; else other">
+        <div class="messageMe">
+
+          <div class="textContainerMe">
+              <div class="textWrapperMe">
+                <div class="timeMessagePosition">
+                  <div class="timeMessage"> {{content.createdAT.seconds *1000 | date:'short'}}</div>
+                </div>
+                <div class="messageText"> {{content.message}} </div>
+              </div>
+                <div class="imageContainerText">
+                  <img *ngIf="this.myPicUrl" height="40px" width="40px" src="{{this.myPicUrl}}"  >
+                  <img *ngIf="!this.myPicUrl"  height="40px" width="40px" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+                </div>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #other>
+        <div class="messageOther">
+          <div class="textContainer">
+              <div class="imageContainerText">
+                <img *ngIf="currentUserToWriteUrl" height="40px" width="40px" src="{{currentUserToWriteUrl}}"  >
+                <img *ngIf="!currentUserToWriteUrl"  height="40px" width="40px" src="https://firebasestorage.googleapis.com/v0/b/travel-ladies.appspot.com/o/travel-ladies%2Fprofile-placeholder.png?alt=media&token=c75f8378-5792-45d4-ade4-97372764d3b8">
+              </div>
+              <div class="textWrapper">
+                <div class="timeMessagePosition">
+                  <div class="timeMessage"> {{content.createdAT.seconds *1000 | date:'short'}}</div>
+                </div>
+                  <div class="messageText">{{content.message}}</div>
+                </div>
+          </div>
+        </div>
+      </ng-template>
+
+    </div>
+    </div>
+  </div>
+
+    <div id="destination"></div>
+
+
+    <div class="noConversations" *ngIf="noChatsYet">
+      <div class="lockedConversation">
+
+        <div class="lockedTitle">No deleted messages</div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+  <div class="locked" *ngIf="!premiumLocal">
+    <div class="lockedContent">
+
+      <div class="lockedTitle">No member yet</div>
+
+      <div class="subTitle">Upgrade your membership to see messages </div>
+        <button mat-raised-button color="warn" routerLink="/premium" >Upgrade now</button>
+    </div>
+  </div>
+
+
+
+    <div class="bottomInput"  *ngIf="premiumLocal && !noChatsYet"  >
+      <div class="deletedConv" >
+        <div class="textDel"> <b>Conversation is deleted. </b></div>
+        <a class="restore" (click)="restore()"> <span>Restore</span> <i class="material-icons">restore</i> </a>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+</div>
+</div>
